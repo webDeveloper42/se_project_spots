@@ -1,0 +1,35 @@
+.gallery{
+    padding-top: 20px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(33,33,33,0.4);
+}
+.gallery__grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 40px;
+}
+.gallery__card{
+    height: 445px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 20px;
+}
+.gallery__card .card__content{
+    display: flex;
+    justify-content: space-between;
+}
+.gallery__card .card__img{
+    height: 445px;
+    border-radius: 8px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: fill;
+}
+.gallery__card .card__like-button{
+    opacity: 40%;
+}
+.gallery__card .card__like-button:hover{
+    opacity: 100%;
+}
