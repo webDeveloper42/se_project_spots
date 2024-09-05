@@ -16,6 +16,6 @@ This project is made so all the elements are displayed correctly on popular scre
  
 
 **Link to Project Published Site**
- [Here](https://webdeveloper42.github.io/my_se_projects_spots/)
+ [Here](https://webdeveloper42.github.io/se_project_spots/)
   
 
