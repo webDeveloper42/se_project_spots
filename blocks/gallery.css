@@ -10,7 +10,7 @@
     row-gap: 40px;
 }
 .gallery__card{
-    height: 445px;
+    min-height: 445px;
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -19,9 +19,14 @@
 .gallery__card .card__content{
     display: flex;
     justify-content: space-between;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
 }
 .gallery__card .card__img{
-    height: 445px;
+    width: 100%;
+    min-height: 620px;
     border-radius: 8px;
     background-repeat: no-repeat;
     background-size: cover;

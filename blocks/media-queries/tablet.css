@@ -1,0 +1,11 @@
+@media screen and (max-width:768px){
+    .gallery__grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .avatar__content{
+        width: 200px;
+    }
+    .avatar__name{
+        font-size: 24px;
+    }
+}

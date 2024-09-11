@@ -1,0 +1,40 @@
+@media screen and (max-width:320px){
+    .page{
+        padding: 0;
+    }
+    .avatar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .avatar__header{
+        gap: 20px;
+        flex-direction: column;
+        align-items: normal;
+    }
+    .avatar__content{
+        flex-direction: column;
+        width: 200px;
+    }
+    .avatar__editable-content{
+        flex-direction: column;
+        align-items: center;
+    }
+    .avatar__name{
+        font-size: 24px;
+    }
+    .avatar__button{
+        width: 280px;
+    }
+    .gallery{
+        display: flex;
+        justify-content: center;
+    }
+    .gallery__grid{
+        width: 288px;
+        grid-template-columns: 288px;
+    }
+    .gallery__card .card__img{
+        width: 288px;
+    }
+}

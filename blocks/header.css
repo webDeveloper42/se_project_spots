@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     background-color: #FFFFFF;
-    height: 46px;
+    min-height: 46px;
     align-items: center;
 }
 .header__logo{
