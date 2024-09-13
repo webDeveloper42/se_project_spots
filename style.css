@@ -9,6 +9,3 @@
 @import url(./blocks/media-queries/desktop.css);
 @import url(./blocks/media-queries/tablet.css);
 @import url(./blocks/media-queries/phone.css);
-* {
-    outline: 1px solid red;
-}

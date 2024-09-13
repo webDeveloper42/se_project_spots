@@ -34,7 +34,15 @@
         width: 288px;
         grid-template-columns: 288px;
     }
+    .gallery__card{
+        font-size: 14px;
+        min-height: 318px;
+    }
     .gallery__card .card__img{
-        width: 288px;
+        height: 288px;
+    }
+    .gallery__card .card__title{
+        display: flex;
+        align-items: end;
     }
 }
