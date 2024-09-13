@@ -1,0 +1,8 @@
+@media screen and (max-width:1024px) {
+    .gallery__card{
+        height: 300px;
+    }
+    .gallery__card .card__img{
+        height: 273px;
+    }
+}
