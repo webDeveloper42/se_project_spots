@@ -6,6 +6,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        padding-top: 20px;
     }
     .avatar__header{
         gap: 20px;
@@ -13,6 +14,8 @@
         align-items: normal;
     }
     .avatar__content{
+        text-align: center;
+        align-items: center;
         flex-direction: column;
         width: 200px;
     }
@@ -32,17 +35,28 @@
     }
     .gallery__grid{
         width: 288px;
-        grid-template-columns: 288px;
+        grid-template-columns: repeat(auto-fit, 288px);
     }
     .gallery__card{
         font-size: 14px;
-        min-height: 318px;
+        /* min-height: 318px; */
     }
-    .gallery__card .card__img{
-        height: 288px;
+    .gallery__card .card__content .card__img{
+        max-height: 288px;
+        max-width: 288px;
     }
-    .gallery__card .card__title{
+    .card__content{
+        max-width: 288px;
+    }
+    .gallery__card .card__content .card__title{
         display: flex;
         align-items: end;
+        font-size: 16px;
+        line-height: 16px;
+        max-width: 288px;
+        width: 0px;
+    }
+    .gallery__card .card__content .card__like-button{
+        height: 18px;
     }
 }

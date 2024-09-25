@@ -39,6 +39,12 @@
     margin: 0;
     color: #212121;
     font-weight: 500;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    max-width: 260px;
 }
 .avatar__name{
     font-size: 32px;

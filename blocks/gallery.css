@@ -4,36 +4,21 @@
     border-bottom: 1px solid rgba(33,33,33,0.4);
 }
 .gallery__grid{
+    padding: 0;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, 413px);
     column-gap: 20px;
     row-gap: 40px;
+    box-sizing: border-box;
+    max-width: 100%;
+    margin: 0 auto;
 }
 .gallery__card{
-    height: 445px;
+    padding: 0;
+    margin: 0;
+    min-width: 100%;
+    min-height: 413px;
     display: flex;
     flex-direction: column;
     gap: 12px;
-}
-.gallery__card .card__content{
-    display: flex;
-    justify-content: space-between;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-
-}
-.gallery__card .card__img{
-    width: 100%;
-    height: 413px;
-    border-radius: 8px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    object-fit: cover;
-}
-.gallery__card .card__like-button{
-    opacity: 40%;
-}
-.gallery__card .card__like-button:hover{
-    opacity: 100%;
 }

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spots</title>
     <link rel="stylesheet" href="./vendor/normalize.css">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./pages/index.css">
 </head>
 <body>
     <header class="header">
@@ -20,9 +20,9 @@
                         <div class="avatar__content">
                             <div class="avatar__description">
                                 <h1 class="avatar__name">Bessie Coleman</h1>
-                                <h2 class="avatar__profession">Civil Aviator</h2>
+                                <p class="avatar__profession">Civil Aviator</p>
                             </div>
-                            <button class="avatar__edit-button button">
+                            <button type="button" class="avatar__edit-button button">
                                 <img class="button__icon" src="./images/edit-icon.svg" alt="edit button icon">
                                 <span class="button__text">
                                     Edit Profile
@@ -37,50 +37,62 @@
                 </div>
             </section>
             <section class="gallery" id="gallery-section">
-                <div class="gallery__grid">
-                    <div class="gallery__card card">
+                <ul class="gallery__grid">
+                    <li class="gallery__card card">
                         <img src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg" alt="card image" class="card__img">
                         <div class="card__content">
-                            <div class="card__title">Val Thorens</div>
-                            <img src="./images/like-icon.svg" alt="" class="card__like-button">
+                            <h2 class="card__title">Val Thorens</h2>
+                            <button alt="" class="card__like-button">
+                                <img src="./images/like-icon.svg" alt="like button">
+                            </button>
                         </div>
-                    </div>
-                    <div class="gallery__card card">
+                    </li>
+                    <li class="gallery__card card">
                         <img src="./images/2-photo-by-ceiline-from-pexels.jpg" alt="card image" class="card__img">
                         <div class="card__content">
-                            <div class="card__title">Restaurant terrace</div>
-                            <img src="./images/like-icon.svg" alt="" class="card__like-button">
+                            <h2 class="card__title">Restaurant terrace</h2>
+                            <button alt="" class="card__like-button">
+                                <img src="./images/like-icon.svg" class="card__like-img" alt="like button">
+                            </button>
                         </div>
-                    </div>
-                    <div class="gallery__card card">
+                    </li>
+                    <li class="gallery__card card">
                         <img src="./images/3-photo-by-tubanur-dogan-from-pexels.jpg" alt="card image" class="card__img">
                         <div class="card__content">
-                            <div class="card__title">An outdoor cafe</div>
-                            <img src="./images/like-icon.svg" alt="" class="card__like-button">
+                            <h2 class="card__title">An outdoor cafe</h2>
+                            <button alt="" class="card__like-button">
+                                <img src="./images/like-icon.svg" class="card__like-img" alt="like button">
+                            </button>
                         </div>
-                    </div>
-                    <div class="gallery__card card">
+                    </li>
+                    <li class="gallery__card card">
                         <img src="./images/4-photo-by-maurice-laschet-from-pexels.jpg" alt="card image" class="card__img">
                         <div class="card__content">
-                            <div class="card__title">A very long bridge, over the forest...</div>
-                            <img src="./images/like-icon.svg" alt="" class="card__like-button">
+                            <h2 class="card__title">A very long bridge, over the forest...</h2>
+                            <button alt="" class="card__like-button">
+                                <img src="./images/like-icon.svg" class="card__like-img" alt="like button">
+                            </button>
                         </div>
-                    </div>
-                    <div class="gallery__card card">
+                    </li>
+                    <li class="gallery__card card">
                         <img src="./images/5-photo-by-van-anh-nguyen-from-pexels.jpg" alt="card image" class="card__img">
                         <div class="card__content">
-                            <div class="card__title">Tunnel with morning light</div>
-                            <img src="./images/like-icon.svg" alt="" class="card__like-button">
+                            <h2 class="card__title">Tunnel with morning light</h2>
+                            <button alt="" class="card__like-button">
+                                <img src="./images/like-icon.svg" class="card__like-img" alt="like button">
+                            </button>
                         </div>
-                    </div>
-                    <div class="gallery__card card">
+                    </li>
+                    <li class="gallery__card card">
                         <img src="./images/6-photo-by-moritz-feldmann-from-pexels.jpg" alt="card image" class="card__img">
                         <div class="card__content">
-                            <div class="card__title">Mountain house</div>
-                            <img src="./images/like-icon.svg" alt="" class="card__like-button">
+                            <h2 class="card__title">Mountain house</h2>
+                            <button alt="" class="card__like-button">
+                                <img src="./images/like-icon.svg" class="card__like-img" alt="like button">
+                            </button>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </section>
         </main>
         <footer class="footer">
