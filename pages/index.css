@@ -8,16 +8,13 @@
 @import url(../blocks/media-queries/larger-displays/larger-displays__page.css);
 @import url(../blocks/media-queries/larger-displays/larger-displays__gallery.css);
 @import url(../blocks/media-queries/larger-displays/larger-displays__card.css);
-/* @import url(../blocks/media-queries/desktop.css); */
 @import url(../blocks/media-queries/desktop/desktop__page.css);
 @import url(../blocks/media-queries/desktop/desktop__gallery.css);
 @import url(../blocks/media-queries/desktop/desktop__card.css);
-/* @import url(../blocks/media-queries/tablet.css); */
 @import url(../blocks/media-queries/tablet/tablet__page.css);
 @import url(../blocks/media-queries/tablet/tablet__avatar.css);
-@import url(../blocks/media-queries/tablet/tablet__grid.css);
+@import url(../blocks/media-queries/tablet/tablet__gallery.css);
 @import url(../blocks/media-queries/tablet/table__card.css);
-/* @import url(../blocks/media-queries/phone.css); */
 @import url(../blocks/media-queries/phone/phone__page.css);
 @import url(../blocks/media-queries/phone/phone__avatar.css);
 @import url(../blocks/media-queries/phone/phone__gallery.css);
