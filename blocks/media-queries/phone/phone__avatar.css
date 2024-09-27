@@ -1,0 +1,36 @@
+@media screen and (max-width:767px){
+    .avatar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+    }
+    .avatar__header{
+        height: 274px;
+        gap: 20px;
+        flex-direction: column;
+        align-items: normal;
+    }
+    .avatar__image{
+        width: 80px;
+        height: 80px;
+    }
+    .avatar__content{
+        min-height: 102px;
+        text-align: center;
+        align-items: center;
+        flex-direction: column;
+        width: 200px;
+    }
+    .avatar__editable-content{
+        height: 134px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .avatar__name{
+        font-size: 24px;
+    }
+    .avatar__button{
+        width: 280px;
+    }
+}

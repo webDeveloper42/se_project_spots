@@ -1,0 +1,9 @@
+@media screen and (min-width:1440px) {
+    .page{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        max-width: -webkit-fill-available;
+        padding: 50px;
+    }
+}

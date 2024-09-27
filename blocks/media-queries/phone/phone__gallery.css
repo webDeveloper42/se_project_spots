@@ -1,0 +1,11 @@
+@media screen and (max-width:767px){
+    .gallery{
+        display: flex;
+        justify-content: center;
+    }
+    .gallery__grid{
+        width: 288px;
+        grid-template-columns: repeat(auto-fit, 288px);
+        gap: 20px;
+    }
+}

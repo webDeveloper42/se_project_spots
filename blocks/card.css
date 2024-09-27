@@ -1,17 +1,17 @@
 .card__content{
     display: flex;
     justify-content: space-between;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-
 }
 .card__title{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 353px;
     font-size: 20px;
     line-height: 24px;
     font-weight: 500;
     padding: 0px;
     margin: 0px;
-    overflow: hidden;
 }
 .card__img{
     display: block;
