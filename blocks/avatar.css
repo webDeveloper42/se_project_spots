@@ -111,7 +111,7 @@
         max-width: 200px;
     }
     .avatar__name{
-        font-size: 24px;
+        font-size: 32px;
     }
     .avatar__button{
         padding: 10px;
@@ -147,7 +147,7 @@
         align-items: center;
     }
     .avatar__name{
-        font-size: 24px;
+        font-size: 20px;
     }
     .avatar__button{
         width: 280px;
