@@ -147,6 +147,7 @@
         align-items: center;
     }
     .avatar__name{
+        line-height: 1;
         font-size: 20px;
     }
     .avatar__button{
