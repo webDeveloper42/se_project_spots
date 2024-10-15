@@ -19,4 +19,4 @@ This project is made so all the elements are displayed correctly on popular scre
  [Here](https://webdeveloper42.github.io/se_project_spots/)
   
 **Video Project**
-[![Landing Page Responsive Design](https://www.youtube.com/watch?v=89_pBA8PJVk)]
+ [Landing Page Responsive Design](https://www.youtube.com/watch?v=89_pBA8PJVk)
