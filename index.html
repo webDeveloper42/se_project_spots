@@ -98,6 +98,29 @@
         <footer class="footer">
             <p class="footer__copyright">2023 &copy; Spots</p>
         </footer>
+        <div class="modal modal_opened">
+            <div class="modal__container">
+                <section class="modal__header">
+                    <h2 class="modal__heading">Edit profile</h2>
+                    <button class="modal__exit-button">
+                        <img class="modal__button-img" src="./images/exit-button_off.svg" alt="exit logo">
+                    </button>
+                </section>
+                <form action="submit" class="modal__form form">
+                    <section class="form__body">
+                        <label for="profile-name" class="form__label">Name
+                        </label>
+                        <input type="text" class="form__input" name="profile-name" placeholder="Bessie Coleman">
+                        <label for="profile-description" class="form__label">Description
+                        </label>
+                        <input type="text" class="form__input" name="profile-description" placeholder="Civil Aviator">
+                    </section>
+                    <section class="form__footer">
+                        <button class="form__save-button">Save</button>
+                    </section>
+                </form>
+            </div>
+        </div>
     </div>
     <script src="index.js" defer></script>
 </body>
