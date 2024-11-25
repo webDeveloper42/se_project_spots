@@ -38,7 +38,18 @@
             </section>
             <section class="gallery" id="gallery-section">
                 <ul class="gallery__grid">
-                    <li class="gallery__card card">
+                    <template class="gallery__card-template">
+                        <li class="gallery__card card">
+                            <img src="" alt="card image" class="card__img">
+                            <div class="card__content">
+                                <h2 class="card__title"></h2>
+                                <button class="card__like-button">
+                                    <img src="./images/like-icon.svg" alt="like button">
+                                </button>
+                            </div>
+                        </li>
+                    </template>
+                    <!-- <li class="gallery__card card">
                         <img src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg" alt="card image" class="card__img">
                         <div class="card__content">
                             <h2 class="card__title">Val Thorens</h2>
@@ -91,7 +102,7 @@
                                 <img src="./images/like-icon.svg" class="card__like-img" alt="like button">
                             </button>
                         </div>
-                    </li>
+                    </li> -->
                 </ul>
             </section>
         </main>
@@ -110,13 +121,13 @@
                     <section class="form__body">
                         <label for="profile-name" class="form__label">Name
                         </label>
-                        <input type="text" class="form__input" name="profile-name" placeholder="Bessie Coleman">
+                        <input type="text" class="form__input profile__name" name="profile-name" placeholder="Bessie Coleman">
                         <label for="profile-description" class="form__label">Description
                         </label>
-                        <input type="text" class="form__input" name="profile-description" placeholder="Civil Aviator">
+                        <input type="text" class="form__input profile__description" name="profile-description" placeholder="Civil Aviator">
                     </section>
                     <section class="form__footer">
-                        <button class="form__save-button">Save</button>
+                        <button id="form__save-button" class="form__save-button">Save</button>
                     </section>
                 </form>
             </div>

@@ -35,3 +35,33 @@ avatarEditBtn.addEventListener('click',function(){
 modalExitBtn.addEventListener('click',function(){
     modalContainer.classList.remove('modal_opened');
 })
+
+let avatarName = document.querySelector('.avatar__name');
+let avatarProfession = document.querySelector('.avatar__profession');
+let formName = document.querySelector('.form__input.profile__name');
+let formDescription = document.querySelector('.form__input.profile__description');
+//the input has the value of the profile's values
+formName.value = avatarName.innerHTML;
+formDescription.value = avatarProfession.innerHTML;
+let saveBtn = document.querySelector('#form__save-button');
+function handleProfileFormSubmit(event){
+    saveBtn.addEventListener('click', function(){
+        avatarName.innerHTML = formName.value;
+        avatarProfession.innerHTML = formDescription.value;
+        modalContainer.classList.remove('modal_opened');
+    })
+    event.preventDefault();
+
+}
+modalContainer.addEventListener('submit',handleProfileFormSubmit);
+let template = document.querySelector('.gallery__card-template');
+let templateContext = template.content;
+let galleryContainer = document.querySelector('.gallery__grid');
+for(let card of initialCards){
+    let cardClone = templateContext.cloneNode(true);
+    let cardImgClone = cardClone.querySelector('.card__img');
+    let cardTitleClone = cardClone.querySelector('.card__title');
+    cardTitleClone.textContent = card.name;
+    cardImgClone.src = card.link;
+    galleryContainer.appendChild(cardClone);
+}
