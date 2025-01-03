@@ -1,40 +1,40 @@
-.avatar{
+.profile{
     padding-bottom: 20px;
     border-bottom: 1px solid rgba(33,33,33,0.4);
 }
-.avatar__header{
+.profile__header{
     display: flex;
     justify-content: space-between;
     align-items: end;
 }
-.avatar__content{
+.profile__content{
     display: flex;
 }
-.avatar__editable-content{
+.profile__editable-content{
     display: flex;
     align-items: end;
     gap: 20px;
 }
-.avatar__image{
+.profile__image{
     width: 190px;
     height: 190px;
     border-radius: 10px;
 }
-.avatar__content{
+.profile__content{
     max-width: 420px;
     min-height: 190px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.avatar__description{
+.profile__description{
     display: flex;
     flex-direction: column;
     gap: 12px;
     min-height: 60px;
 }
-.avatar__name, 
-.avatar__profession{
+.profile__name, 
+.profile__profession{
     padding: 0;
     margin: 0;
     color: #212121;
@@ -46,16 +46,16 @@
     -webkit-box-orient: vertical;
     max-width: 260px;
 }
-.avatar__name{
+.profile__name{
     font-size: 32px;
     line-height: 32px;
 }
-.avatar__profession{
+.profile__profession{
     font-size: 16px;
     line-height: 16px;
     opacity: 70%;
 }
-.avatar__edit-button{
+.profile__edit-button{
     width: 107.34px;
     height: 16px;
     gap: 8px;
@@ -68,17 +68,17 @@
     cursor: pointer;
     opacity: 70%;
 }
-.avatar__edit-button:hover{
+.profile__edit-button:hover{
     opacity:1;
 }
-.avatar__edit-button .button__text{
+.profile__edit-button .button__text{
     font-size: 16px;
     line-height: 16px;
     font-weight: 500;
     padding: 0;
     margin: 0;
 }
-.avatar__button{
+.profile__button{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -90,13 +90,13 @@
     cursor: pointer;
     border: none;
 }
-.avatar__button:hover{
+.profile__button:hover{
     opacity: 80%;
 }
-.avatar__button .button__icon{
+.profile__button .button__icon{
     color: rgba(252, 245, 229, 1);
 }
-.avatar__button .button__text{
+.profile__button .button__text{
     padding: 0;
     margin: 0;
 }
@@ -107,50 +107,50 @@
     }
 }
 @media screen and (min-width:768px) and (max-width:1024px){
-    .avatar__content{
+    .profile__content{
         max-width: 200px;
     }
-    .avatar__name{
+    .profile__name{
         font-size: 32px;
     }
-    .avatar__button{
+    .profile__button{
         padding: 10px;
     }
 }
 @media screen and (max-width:767px){
-    .avatar{
+    .profile{
         display: flex;
         justify-content: center;
         align-items: center;
         padding-top: 20px;
     }
-    .avatar__header{
+    .profile__header{
         min-height: 274px;
         gap: 20px;
         flex-direction: column;
         align-items: normal;
     }
-    .avatar__image{
+    .profile__image{
         width: 80px;
         height: 80px;
     }
-    .avatar__content{
+    .profile__content{
         min-height: 102px;
         text-align: center;
         align-items: center;
         flex-direction: column;
         max-width: 200px;
     }
-    .avatar__editable-content{
+    .profile__editable-content{
         height: 134px;
         flex-direction: column;
         align-items: center;
     }
-    .avatar__name{
+    .profile__name{
         line-height: 1;
         font-size: 20px;
     }
-    .avatar__button{
+    .profile__button{
         width: 280px;
     }
 }

@@ -13,16 +13,16 @@
     </header>
     <div class="page">
         <main>
-            <section class="avatar" id="avatar-section">
-                <div class="avatar__header">
-                    <div class="avatar__editable-content">
-                        <img class="avatar__image" src="./images/avatar.jpg" alt="avatar profile picture">
-                        <div class="avatar__content">
-                            <div class="avatar__description">
-                                <h1 class="avatar__name">Bessie Coleman</h1>
-                                <p class="avatar__profession">Civil Aviator</p>
+            <section class="profile" id="profile-section">
+                <div class="profile__header">
+                    <div class="profile__editable-content">
+                        <img class="profile__image" src="./images/avatar.jpg" alt="avatar profile picture">
+                        <div class="profile__content">
+                            <div class="profile__description">
+                                <h1 class="profile__name">Bessie Coleman</h1>
+                                <p class="profile__profession">Civil Aviator</p>
                             </div>
-                            <button type="button" id="avatar__edit-button" class="avatar__edit-button button">
+                            <button type="button" id="profile__edit-button" class="profile__edit-button button">
                                 <img class="button__icon" src="./images/edit-icon.svg" alt="edit button icon">
                                 <span class="button__text">
                                     Edit Profile
@@ -30,7 +30,7 @@
                             </button>
                         </div>
                     </div>
-                    <button class="avatar__button button">
+                    <button class="profile__button button">
                         <img class="button__icon" src="./images/plus-icon.svg" alt="button icon">
                         <span class="button__text">New Post</span>
                     </button>
@@ -63,14 +63,14 @@
                         <img class="modal__button-img" src="./images/exit-button_off.svg" alt="exit logo">
                     </button>
                 </section>
-                <form action="submit" class="modal__form form">
+                <form class="modal__form form">
                     <section class="form__body">
-                        <label for="profile-name" class="form__label">Name
+                        <label for="profile-name" id="profile-name" class="form__label">Name
                         </label>
-                        <input type="text" class="form__input profile__name" name="profile-name" placeholder="Bessie Coleman">
-                        <label for="profile-description" class="form__label">Description
+                        <input type="text" class="form__input profile__name" id="profile-name" name="profile-name" placeholder="Bessie Coleman">
+                        <label for="profile-description" class="form__label" id="profile-description">Description
                         </label>
-                        <input type="text" class="form__input profile__description" name="profile-description" placeholder="Civil Aviator">
+                        <input type="text" class="form__input profile__description" id="profile-description" name="profile-description" placeholder="Civil Aviator">
                     </section>
                     <section class="form__footer">
                         <button id="form__save-button" class="form__save-button">Save</button>
@@ -79,6 +79,6 @@
             </div>
         </div>
     </div>
-    <script src="index.js" defer></script>
+    <script src="./scripts/index.js" defer></script>
 </body>
 </html>
