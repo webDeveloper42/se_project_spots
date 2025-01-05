@@ -40,7 +40,7 @@
 }
 @media screen and (min-width:768px) and (max-width:1024px){
     .card__img{
-        height: 370px;
+        max-height: 288px;
     }
     .card__title{
         box-sizing: border-box;
