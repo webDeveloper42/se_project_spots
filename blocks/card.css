@@ -20,7 +20,7 @@
     border-radius: 8px;
     object-fit: cover;
 }
-.card__like-button{
+.card__like{
     opacity: 40%;
     border: none;
     background-color: transparent;
@@ -30,7 +30,7 @@
     width: 23px;
     height: 20px;
 }
-.card__like-button:hover{
+.card__like:hover{
     opacity: 100%;
 }
 @media screen and (min-width:1440px) {
@@ -57,7 +57,7 @@
         max-width: 288px;
         
     }
-    .card__like-button{
+    .card__like{
         height: 18px;
     }
 }

@@ -55,7 +55,7 @@
     line-height: 16px;
     opacity: 70%;
 }
-.profile__edit-button{
+.profile__edit{
     width: 107.34px;
     height: 16px;
     gap: 8px;
@@ -78,7 +78,7 @@
     padding: 0;
     margin: 0;
 }
-.profile__button{
+.profile__add{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -90,13 +90,13 @@
     cursor: pointer;
     border: none;
 }
-.profile__button:hover{
+.profile__add:hover{
     opacity: 80%;
 }
-.profile__button .button__icon{
+.profile__add .button__icon{
     color: rgba(252, 245, 229, 1);
 }
-.profile__button .button__text{
+.profile__add .button__text{
     padding: 0;
     margin: 0;
 }

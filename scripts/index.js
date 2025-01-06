@@ -44,8 +44,8 @@ for(let card of initialCards){
     galleryContainer.appendChild(cardClone);
 }
 
-const profileEditBtn = document.querySelector('#profile__edit-button');
-const modalExitBtn = document.querySelector('#modal__exit-button');
+const profileEditBtn = document.querySelector('#profile__edit');
+const modalExitBtn = document.querySelector('#modal__exit');
 const modalContainer = document.querySelector('.modal');
 function closeProfileModal(){
     modalContainer.classList.remove('modal_opened');
@@ -61,9 +61,9 @@ modalExitBtn.addEventListener('click',function(){
 
 const profileName = document.querySelector('.profile__name');
 const profileProfession = document.querySelector('.profile__profession');
-const formName = document.querySelector('.form__input.profile__name');
-const formDescription = document.querySelector('.form__input.profile__description');
-const saveBtn = document.querySelector('#form__save-button');
+const formName = document.querySelector('.form__input#profile-name');
+const formDescription = document.querySelector('.form__input#profile-description');
+const saveBtn = document.querySelector('#form__save');
 saveBtn.addEventListener('click', function(){
     profileName.textContent = formName.value;
     profileProfession.textContent = formDescription.value;

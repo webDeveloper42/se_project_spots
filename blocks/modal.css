@@ -41,14 +41,14 @@
     font-weight: 500;
     line-height: 32px;
 }
-.modal__exit-button{
+.modal__exit{
     cursor: pointer;
     border: none;
     background-color: transparent;
     color: white;
     font-size: 40px;
 }
-.modal__exit-button:hover .modal__button-img{
+.modal__exit:hover .modal__button-img{
     content: url(../images/exit-button_on.svg);
 }
 .modal__form{
@@ -74,7 +74,7 @@
     font-size: 16px;
     line-height: 16px;
 }
-.form__save-button{
+.form__save{
     width: 156px;
     height: 52px;
     border-radius: 8px;
@@ -82,7 +82,7 @@
     color: rgba(252, 245, 229, 1);
     background-color: rgba(33, 33, 33, 1);
 }
-.form__save-button:hover{
+.form__save:hover{
     opacity: 80%;
 }
 
@@ -108,7 +108,7 @@
         min-width: 250px;
         margin-bottom: 24px;
     }
-    .form__save-button{
+    .form__save{
         width: 276px;
     }
 }

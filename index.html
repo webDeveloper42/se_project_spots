@@ -22,7 +22,7 @@
                                 <h1 class="profile__name">Bessie Coleman</h1>
                                 <p class="profile__profession">Civil Aviator</p>
                             </div>
-                            <button type="button" id="profile__edit-button" class="profile__edit-button button">
+                            <button type="button" id="profile__edit" class="button profile__edit">
                                 <img class="button__icon" src="./images/edit-icon.svg" alt="edit button icon">
                                 <span class="button__text">
                                     Edit Profile
@@ -30,7 +30,7 @@
                             </button>
                         </div>
                     </div>
-                    <button class="profile__button button">
+                    <button class="button profile__add">
                         <img class="button__icon" src="./images/plus-icon.svg" alt="button icon">
                         <span class="button__text">New Post</span>
                     </button>
@@ -39,11 +39,11 @@
             <section class="gallery" id="gallery-section">
                 <ul class="gallery__grid">
                     <template class="gallery__card-template">
-                        <li class="gallery__card card">
+                        <li class="card gallery__card">
                             <img src="" alt="card image" class="card__img">
                             <div class="card__content">
                                 <h2 class="card__title"></h2>
-                                <button class="card__like-button">
+                                <button class="button card__like">
                                     <img src="./images/like-icon.svg" alt="like button">
                                 </button>
                             </div>
@@ -59,21 +59,21 @@
             <div class="modal__container">
                 <section class="modal__header">
                     <h2 class="modal__heading">Edit profile</h2>
-                    <button id="modal__exit-button" class="modal__exit-button">
-                        <img class="modal__button-img" src="./images/exit-button_off.svg" alt="exit logo">
+                    <button id="modal__exit" class="button modal__exit">
+                        <img class="modal__img" src="./images/exit-button_off.svg" alt="exit logo">
                     </button>
                 </section>
-                <form class="modal__form form">
+                <form class="form modal__form">
                     <section class="form__body">
                         <label for="profile-name" id="profile-name" class="form__label">Name
                         </label>
-                        <input type="text" class="form__input profile__name" id="profile-name" name="profile-name" placeholder="Bessie Coleman">
+                        <input type="text" class="form__input" id="profile-name" name="profile-name" placeholder="Bessie Coleman">
                         <label for="profile-description" class="form__label" id="profile-description">Description
                         </label>
-                        <input type="text" class="form__input profile__description" id="profile-description" name="profile-description" placeholder="Civil Aviator">
+                        <input type="text" class="form__input" id="profile-description" name="profile-description" placeholder="Civil Aviator">
                     </section>
                     <section class="form__footer">
-                        <button id="form__save-button" class="form__save-button">Save</button>
+                        <button id="form__save" class="button form__save">Save</button>
                     </section>
                 </form>
             </div>
