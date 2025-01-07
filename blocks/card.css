@@ -51,7 +51,7 @@
         max-width: 288px;
     }
     .card__title{
-        display: flex;
+        text-overflow: ellipsis;
         align-items: end;
         font-size: 16px;
         max-width: 288px;
