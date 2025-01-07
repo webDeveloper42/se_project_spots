@@ -31,18 +31,23 @@ const initialCards = [
     }
 ];
 const template = document.querySelector('.gallery__card-template');
-let templateContext = template.content;
+const templateContext = template.content;
 const galleryContainer = document.querySelector('.gallery__grid');
-for(let card of initialCards){
-    let cardClone = templateContext.cloneNode(true);
-    let cardImgClone = cardClone.querySelector('.card__img');
-    let cardTitleClone = cardClone.querySelector('.card__title');
-    let cardAltClone = cardClone.querySelector('.card__img');
-    cardTitleClone.textContent = card.name;
-    cardImgClone.src = card.link;
-    cardAltClone.alt = card.alt
-    galleryContainer.appendChild(cardClone);
+function getCardElement(cardData) {
+    const cardClone = template.content.cloneNode(true);
+    const cardImg = cardClone.querySelector('.card__img');
+    const cardTitle = cardClone.querySelector('.card__title');
+
+    cardImg.src = cardData.link;
+    cardImg.alt = cardData.alt;
+    cardTitle.textContent = cardData.name;
+    
+    return cardClone; 
 }
+initialCards.forEach(function(cardData) {
+    const cardElement = getCardElement(cardData); 
+    galleryContainer.appendChild(cardElement); 
+});
 
 const profileEditBtn = document.querySelector('#profile__edit');
 const modalExitBtn = document.querySelector('#modal__exit');
