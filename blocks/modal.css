@@ -71,8 +71,8 @@
     padding: 0px 12px;
     margin-top: 8px;
     font-weight: 500;
-    font-size: 16px;
-    line-height: 16px;
+    font-size: 20px;
+    line-height: 20px;
 }
 .form__input:hover{
     border: 1px solid rgb(33, 33, 33);
@@ -111,6 +111,8 @@
     .form__input{
         min-width: 250px;
         margin-bottom: 24px;
+        font-size: 16px;
+        line-height: 16px;
     }
     .form__save{
         width: 276px;
