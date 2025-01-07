@@ -69,13 +69,11 @@ const profileProfession = document.querySelector('.profile__profession');
 const formName = document.querySelector('.form__input#profile-name');
 const formDescription = document.querySelector('.form__input#profile-description');
 const saveBtn = document.querySelector('#form__save');
-saveBtn.addEventListener('click', function(){
+const profileForm = modalContainer.querySelector('.modal__form');
+function handleProfileFormSubmit(event){
+    event.preventDefault();
     profileName.textContent = formName.value;
     profileProfession.textContent = formDescription.value;
     closeProfileModal();
-})
-function handleProfileFormSubmit(event){
-    event.preventDefault();
-    
 }
-modalContainer.addEventListener('submit',handleProfileFormSubmit);
+profileForm.addEventListener('submit',handleProfileFormSubmit);
