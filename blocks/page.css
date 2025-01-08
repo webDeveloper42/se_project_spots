@@ -3,13 +3,17 @@
     font-family: "Poppins", Arial, sans-serif;
     padding: 30px 70px 0px;
     max-width: 1440px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 
+}
+main{
+    display: flex;
+    flex-direction: column;
 }
 @media screen and (min-width:1440px) {
     .page{
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
         max-width: -webkit-fill-available;
     }
 }

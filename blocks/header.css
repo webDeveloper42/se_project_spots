@@ -3,6 +3,7 @@
     justify-content: center;
     background-color: #FFFFFF;
     min-height: 46px;
+    max-width: 1440px;
     align-items: center;
 }
 .header__logo{
