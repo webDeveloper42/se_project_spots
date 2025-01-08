@@ -17,3 +17,8 @@ main{
         max-width: -webkit-fill-available;
     }
 }
+@media screen and (max-width:320px) {
+    .page{
+        padding: 0px;
+    }
+}

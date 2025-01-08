@@ -93,7 +93,6 @@
 @media screen and (min-width:320px) and (max-width:768px){
     .modal__container{
         align-items: center;
-        width: 300px;
         max-height: 336px;
         padding: 12px;
     }
