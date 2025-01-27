@@ -20,8 +20,11 @@
     border-radius: 8px;
     object-fit: cover;
 }
-.card__like{
+.default{
     opacity: 40%;
+}
+.card__like,
+.card__trash{
     border: none;
     background-color: transparent;
     cursor: pointer;
@@ -30,8 +33,28 @@
     width: 23px;
     height: 20px;
 }
-.card__like:hover{
+.card__trash{
+    width: 32px;
+    height: 32px;
+    position: relative;
+    align-items: center;
+    left: 350px;
+    top: 50px;
+
+}
+.card__trash-img{
+    width: 32px;
+    height: 32px;
+}
+.card__like:hover,
+.card__trash:hover{
     opacity: 100%;
+}
+.clicked{
+    opacity: 100%;
+}
+.clicked:hover{
+    opacity: 40%;
 }
 @media screen and (min-width:1440px) {
     .card__title{

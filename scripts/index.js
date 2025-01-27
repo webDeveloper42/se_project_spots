@@ -30,6 +30,7 @@ const initialCards = [
         alt : "A cabin on the woods in the winter in front of snowy trees"
     }
 ];
+//card gallery stuff
 const template = document.querySelector('.gallery__card-template');
 const templateContext = template.content;
 const galleryContainer = document.querySelector('.gallery__grid');
@@ -37,11 +38,40 @@ function getCardElement(cardData) {
     const cardClone = template.content.cloneNode(true);
     const cardImg = cardClone.querySelector('.card__img');
     const cardTitle = cardClone.querySelector('.card__title');
-
+    const likeBtn = cardClone.querySelector('.card__like')
+    const btnImg = cardClone.querySelector('.button__img-like')
+    const trashBtn = cardClone.querySelector('.card__trash')
+    const trashImg = cardClone.querySelector('.button__img-trash')
+    
     cardImg.src = cardData.link;
     cardImg.alt = cardData.alt;
     cardTitle.textContent = cardData.name;
-    
+    likeBtn.addEventListener('click', function () {
+        if (likeBtn.classList.contains('clicked')) {
+            // Unlike state
+            btnImg.src = '../images/like.svg'; // Path to unliked image
+            likeBtn.classList.remove('clicked');
+            likeBtn.classList.add('default');
+        } else {
+            // Liked state
+            btnImg.src = '../images/liked.svg'; // Path to liked image
+            likeBtn.classList.add('clicked');
+            likeBtn.classList.remove('default');
+        }
+    });
+    trashBtn.addEventListener('click', function () {
+        if (trashBtn.classList.contains('clicked')) {
+            // Unlike state
+            trashImg.src = '../images/trashDefault.svg'; // Path to unliked image
+            trashBtn.classList.remove('clicked');
+            trashBtn.classList.add('default');
+        } else {
+            // Liked state
+            trashImg.src = '../images/trashActive.svg'; // Path to liked image
+            trashBtn.classList.add('clicked');
+            trashBtn.classList.remove('default');
+        }
+    });
     return cardClone; 
 }
 initialCards.forEach(function(cardData) {
