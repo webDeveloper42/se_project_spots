@@ -49,36 +49,31 @@ function getCardElement(cardData) {
     likeBtn.addEventListener('click', function () {
         if (likeBtn.classList.contains('clicked')) {
             // Unlike state
-            btnImg.src = '../images/like.svg'; // Path to unliked image
+            btnImg.src = '../images/like.svg'; 
             likeBtn.classList.remove('clicked');
             likeBtn.classList.add('default');
         } else {
             // Liked state
-            btnImg.src = '../images/liked.svg'; // Path to liked image
+            btnImg.src = '../images/liked.svg'; 
             likeBtn.classList.add('clicked');
             likeBtn.classList.remove('default');
         }
     });
     trashBtn.addEventListener('click', function () {
-        if (trashBtn.classList.contains('clicked')) {
-            // Unlike state
-            trashImg.src = '../images/trashDefault.svg'; // Path to unliked image
-            trashBtn.classList.remove('clicked');
-            trashBtn.classList.add('default');
-        } else {
-            // Liked state
-            trashImg.src = '../images/trashActive.svg'; // Path to liked image
-            trashBtn.classList.add('clicked');
-            trashBtn.classList.remove('default');
-        }
+        trashBtn.parentNode.remove();
     });
+    trashBtn.addEventListener('mouseover',function(){
+        trashImg.src = '../images/trashActive.svg';
+    })
+    trashBtn.addEventListener('mouseout',function(){
+        trashImg.src = '../images/trashDefault.svg';
+    })
     return cardClone; 
 }
 initialCards.forEach(function(cardData) {
     const cardElement = getCardElement(cardData); 
     galleryContainer.appendChild(cardElement); 
 });
-
 const profileEditBtn = document.querySelector('#profile__edit');
 const modalExitBtn = document.querySelector('#modal__exit');
 const modalContainer = document.querySelector('.modal');
@@ -107,3 +102,4 @@ function handleProfileFormSubmit(event){
     closeProfileModal();
 }
 profileForm.addEventListener('submit',handleProfileFormSubmit);
+
