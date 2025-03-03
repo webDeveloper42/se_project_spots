@@ -34,6 +34,10 @@ const initialCards = [
 const template = document.querySelector('.gallery__card-template');
 const templateContext = template.content;
 const galleryContainer = document.querySelector('.gallery__grid');
+const modalPreview = document.querySelector('.modal__preview')
+const modalPreviewImg = document.querySelector('.modal__preview-img')
+const modalPreviewTitle = document.querySelector('.modal__preview-title')
+const modalExitPreview = document.querySelector('#modal__preview-exit')
 function getCardElement(cardData) {
     const cardClone = template.content.cloneNode(true);
     const cardImg = cardClone.querySelector('.card__img');
@@ -68,6 +72,22 @@ function getCardElement(cardData) {
     trashBtn.addEventListener('mouseout',function(){
         trashImg.src = '../images/trashDefault.svg';
     })
+    modalExitPreview.addEventListener('mouseover',function(){
+        modalExitPreview.src = '../images/default-invert-x.svg';
+    })
+    modalExitPreview.addEventListener('mouseout',function(){
+        modalExitPreview.src = '../images/active-invert-x.svg';
+    })
+    cardImg.addEventListener('click',function(){
+        console.log('do something');
+        modalPreview.classList.remove('modal__preview-displayToggle')
+        modalPreviewImg.src = cardData.link;
+        modalPreviewTitle.textContent = cardData.name;
+
+    })
+    modalExitPreview.addEventListener('click', function (){
+        modalPreview.classList.add('modal__preview-displayToggle')
+    })
     return cardClone; 
 }
 initialCards.forEach(function(cardData) {
@@ -75,7 +95,7 @@ initialCards.forEach(function(cardData) {
     galleryContainer.appendChild(cardElement); 
 });
 const profileEditBtn = document.querySelector('#profile__edit');
-const modalExitBtn = document.querySelector('#modal__exit');
+const modalExitBtn = document.querySelector('#modal__exit-edit');
 const modalContainer = document.querySelector('.modal');
 function closeProfileModal(){
     modalContainer.classList.remove('modal_opened');
