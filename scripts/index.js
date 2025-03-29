@@ -53,12 +53,12 @@ function getCardElement(cardData) {
     likeBtn.addEventListener('click', function () {
         if (likeBtn.classList.contains('clicked')) {
             // Unlike state
-            btnImg.src = '../images/like.svg'; 
+            btnImg.src = './images/like.svg';
             likeBtn.classList.remove('clicked');
             likeBtn.classList.add('default');
         } else {
             // Liked state
-            btnImg.src = '../images/liked.svg'; 
+            btnImg.src = './images/liked.svg';
             likeBtn.classList.add('clicked');
             likeBtn.classList.remove('default');
         }
