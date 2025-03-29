@@ -30,6 +30,7 @@
     background-color: transparent;
     cursor: pointer;
 }
+
 .card__like-img{
     width: 23px;
     height: 20px;
@@ -59,9 +60,14 @@
 .card-noDisplay{
     display: none;
 }
-@media screen and (min-width:1440px) {
+@media screen and (max-width:1440px) {
     .card__title{
         font-size: 24px;
+    }
+}
+@media screen and (max-width:1024px){
+    .card__trash{
+        left:250px;
     }
 }
 @media screen and (max-width:767px){

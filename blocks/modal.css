@@ -92,7 +92,7 @@
     opacity: 80%;
 }
 
-@media screen and (min-width:320px) and (max-width:768px){
+@media screen and (max-width:768px){
     .modal__container{
         align-items: center;
         max-height: 336px;
