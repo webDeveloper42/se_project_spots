@@ -67,10 +67,10 @@ function getCardElement(cardData) {
         trashBtn.parentNode.remove();
     });
     trashBtn.addEventListener('mouseover',function(){
-        trashImg.src = '../images/trashActive.svg';
+        trashImg.src = './images/trashActive.svg';
     })
     trashBtn.addEventListener('mouseout',function(){
-        trashImg.src = '../images/trashDefault.svg';
+        trashImg.src = './images/trashDefault.svg';
     })
     modalExitPreview.addEventListener('mouseover',function(){
         modalExitPreview.src = '../images/default-invert-x.svg';
