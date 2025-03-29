@@ -40,7 +40,7 @@
     position: relative;
     align-items: center;
     left: 350px;
-    top: 50px;
+    top: 53px;
 }
 .card__trash-img{
     width: 32px;
@@ -81,9 +81,12 @@
         align-items: end;
         font-size: 16px;
         max-width: 288px;
-        
+
     }
     .card__like{
         height: 18px;
+    }
+    .card__trash{
+        left:238px
     }
 }

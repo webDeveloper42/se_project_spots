@@ -80,13 +80,13 @@ function getCardElement(cardData) {
     })
     cardImg.addEventListener('click',function(){
         console.log('do something');
-        modalPreview.classList.remove('modal__preview-displayToggle')
+        modalPreview.classList.remove('modal__displayToggle')
         modalPreviewImg.src = cardData.link;
         modalPreviewTitle.textContent = cardData.name;
 
     })
     modalExitPreview.addEventListener('click', function (){
-        modalPreview.classList.add('modal__preview-displayToggle')
+        modalPreview.classList.add('modal__displayToggle')
     })
     return cardClone; 
 }
@@ -95,15 +95,24 @@ initialCards.forEach(function(cardData) {
     galleryContainer.appendChild(cardElement); 
 });
 const profileEditBtn = document.querySelector('#profile__edit');
+const buttonPost = document.querySelector('.profile__add');
 const modalExitBtn = document.querySelector('#modal__exit-edit');
-const modalContainer = document.querySelector('.modal');
+const modalEditContainer = document.querySelector('.modal__edit');
+const modalPostContainer = document.querySelector('.modal__post');
+
 function closeProfileModal(){
-    modalContainer.classList.remove('modal_opened');
+    modalEditContainer.classList.remove('modal_opened');
+    modalPostContainer.classList.remove('modal_opened');
+
 }
 profileEditBtn.addEventListener('click',function(){
-    modalContainer.classList.add('modal_opened');
+    modalEditContainer.classList.add('modal_opened');
     formName.value = profileName.textContent;
     formDescription.value = profileProfession.textContent;
+})
+buttonPost.addEventListener('click',function(){
+    modalPostContainer.classList.add('modal_opened');
+
 })
 modalExitBtn.addEventListener('click',function(){
     closeProfileModal();

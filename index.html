@@ -58,7 +58,7 @@
         <footer class="footer">
             <p class="footer__copyright">2023 &copy; Spots</p>
         </footer>
-        <div class="modal">
+        <div class="modal" id="modal__edit">
             <div class="modal__container">
                 <section class="modal__header">
                     <h2 class="modal__heading">Edit profile</h2>
@@ -81,7 +81,30 @@
                 </form>
             </div>
         </div>
-        <div class="modal__preview modal__preview-displayToggle">
+        <div class="modal" id="modal__post">
+            <div class="modal__container">
+                <section class="modal__header">
+                    <h2 class="modal__heading">New Post</h2>
+                    <button id="modal__exit-post" class="button modal__exit">
+                        <img class="modal__img" src="./images/exit-button_off.svg" alt="exit logo">
+                    </button>
+                </section>
+                <form class="form modal__form">
+                    <section class="form__body">
+                        <label for="profile-name" class="form__label form__label-name">Image link
+                        </label>
+                        <input type="text" class="form__input" id="image-link" name="profile-name" placeholder="Paste a link to the picture">
+                        <label for="profile-description" class="form__label form__label-description">Caption
+                        </label>
+                        <input type="text" class="form__input" id="image-caption" name="profile-description" placeholder="Type your caption">
+                    </section>
+                    <section class="form__footer">
+                        <button id="form__save-post" class="button form__save">Save</button>
+                    </section>
+                </form>
+            </div>
+        </div>
+        <div class="modal__preview modal__displayToggle">
             <div class="modal__preview-container">
                 <button id="modal__preview-exit" class="button modal__exit">
                     <img class="modal__img" src="./images/default-invert-x.svg" alt="exit logo">
