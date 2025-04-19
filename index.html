@@ -37,15 +37,15 @@
                 </div>
             </section>
             <section class="gallery" id="gallery-section">
-                <ul class="gallery__grid">
-                    <template class="gallery__card-template">
-                        <li class="card gallery__card">
+                <ul class="gallery__grid" id="gallery-grid">
+                    <template class="gallery__card-template" id="card-template">
+                        <li class="card gallery__card" id="gallery__card">
                             <button class="button card__trash default">
                                 <img class="button__img-trash" src="./images/trashDefault.svg" alt="trash button">
                             </button>
-                            <img src="" alt="card image" class="card__img">
+                            <img src="" alt="card image" class="card__img" id="card__img">
                             <div class="card__content">
-                                <h2 class="card__title"></h2>
+                                <h2 class="card__title" id="card__title"></h2>
                                 <button class="button card__like default">
                                     <img class="button__img-like" src="./images/like.svg" alt="like button">
                                 </button>
@@ -116,6 +116,6 @@
             </div>
         </div>
     </div>
-    <script src="./scripts/index.js" defer></script>
+    <script type="module" src="./scripts/index.js" defer></script>
 </body>
 </html>
