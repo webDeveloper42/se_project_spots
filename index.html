@@ -30,7 +30,7 @@
                             </button>
                         </div>
                     </div>
-                    <button class="button profile__add">
+                    <button class="button profile__add" id="profile__add">
                         <img class="button__icon" src="./images/plus-icon.svg" alt="button icon">
                         <span class="button__text button__post" id="button__post">New Post</span>
                     </button>
@@ -58,7 +58,7 @@
         <footer class="footer">
             <p class="footer__copyright">2023 &copy; Spots</p>
         </footer>
-        <div class="modal" id="modal__edit">
+        <div class="modal__hidden" id="modal__edit">
             <div class="modal__container">
                 <section class="modal__header">
                     <h2 class="modal__heading">Edit profile</h2>
@@ -81,8 +81,8 @@
                 </form>
             </div>
         </div>
-        <div class="modal" id="modal__post">
-            <div class="modal__container">
+        <div class="modal__hidden" id="modal__post">
+            <div class="modal__container" id="modal__post-container">
                 <section class="modal__header">
                     <h2 class="modal__heading">New Post</h2>
                     <button id="modal__exit-post" class="button modal__exit">
@@ -92,11 +92,11 @@
                 <form class="form modal__form">
                     <section class="form__body">
                         <label for="profile-name" class="form__label form__label-name">Image link
+                            <input type="text" class="form__input" id="image-link" name="profile-name" placeholder="Paste a link to the picture">
                         </label>
-                        <input type="text" class="form__input" id="image-link" name="profile-name" placeholder="Paste a link to the picture">
                         <label for="profile-description" class="form__label form__label-description">Caption
+                            <input type="text" class="form__input" id="image-caption" name="profile-description" placeholder="Type your caption">
                         </label>
-                        <input type="text" class="form__input" id="image-caption" name="profile-description" placeholder="Type your caption">
                     </section>
                     <section class="form__footer">
                         <button id="form__save-post" class="button form__save">Save</button>
@@ -104,7 +104,7 @@
                 </form>
             </div>
         </div>
-        <div class="modal__preview modal__displayToggle">
+        <div class="modal__hidden" id="modal__preview">
             <div class="modal__preview-container">
                 <button id="modal__preview-exit" class="button modal__exit">
                     <img class="modal__img" src="./images/default-invert-x.svg" alt="exit logo">

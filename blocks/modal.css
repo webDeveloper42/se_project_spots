@@ -1,7 +1,8 @@
-.modal{
-    visibility: hidden;
+.modal__hidden{
+    display: none;
 }
-.modal_opened{
+.modal__opened{
+    display: block;
     width: 100%;
     height: 100%;
     top: 0;
@@ -9,7 +10,6 @@
     z-index: 1;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.5);
-    visibility: visible;
 }
 .modal__container{
     position: absolute;
@@ -70,7 +70,7 @@
     border: 1px solid rgba(33, 33, 33, 0.4);
     border-radius: 8px;
     margin-bottom: 32px;
-    padding: 0px 12px;
+    padding: 0 12px;
     margin-top: 8px;
     font-weight: 500;
     font-size: 20px;
