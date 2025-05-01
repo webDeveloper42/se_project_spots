@@ -1,3 +1,7 @@
+function close(element){
+    element.classList.remove('modal__opened');
+    element.classList.add('modal__hidden');
+}
 function openModal(openBtn , modalContainer) {
     openBtn.addEventListener('click', () => {
         modalContainer.classList.remove('modal__hidden')
@@ -6,11 +10,10 @@ function openModal(openBtn , modalContainer) {
 }
 function closeModal(closeBtn , modalContainer) {
     closeBtn.addEventListener('click', () => {
-        modalContainer.classList.remove('modal__opened');
-        modalContainer.classList.add('modal__hidden');
+        close(modalContainer);
     })
 }
 
 
 
-export {openModal, closeModal};
+export {openModal, closeModal, close};
