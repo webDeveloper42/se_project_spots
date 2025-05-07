@@ -1,5 +1,6 @@
 import {initialCards} from "./gallery_data.js";
-import {toggleLike} from "./modal_card-features.js";
+import {enableDelete, enablePreview, toggleLike} from "./modal_card-features.js";
+
 const cardGallery = document.getElementById("gallery-grid");
 const cardTemplate = document.getElementById("card-template");
 function createCard(data) {
@@ -9,10 +10,12 @@ function createCard(data) {
     cardImg.src = data.link;
     cardImg.alt = data.alt;
     cardTitle.textContent = data.name;
-    return cardClone;
+    return cardClone.querySelector("#gallery__card");
 }
 initialCards.forEach(data => {
     const card = createCard(data);
     toggleLike(card);
+    enableDelete(card);
+    enablePreview(card);
     cardGallery.appendChild(card);
 });

@@ -40,12 +40,12 @@
                 <ul class="gallery__grid" id="gallery-grid">
                     <template class="gallery__card-template" id="card-template">
                         <li class="card gallery__card" id="gallery__card">
-                            <button class="button card__trash default">
-                                <img class="button__img-trash" src="./images/trashDefault.svg" alt="trash button">
+                            <button class="button card__trash default" id="button__delete">
+                                <img class="button__img-trash"  src="./images/trashDefault.svg" alt="trash button">
                             </button>
                             <img src="" alt="card image" class="card__img" id="card__img">
                             <div class="card__content">
-                                <h2 class="card__title" id="card__title"></h2>
+                                <h2 class="card__title" id="card__title">Card Title</h2>
                                 <button class="button card__like default" id="card__like-btn">
                                     <img class="button__img-like" id="img-like" src="./images/like.svg" alt="like button">
                                 </button>
@@ -110,7 +110,7 @@
                     <img class="modal__img" src="./images/default-invert-x.svg" alt="exit logo">
                 </button>
                 <div class="modal__preview-img-container">
-                    <img src="" alt="card image" class="modal__preview-img">
+                    <img src="" alt="card image" class="modal__preview-img" id="modal__preview-img">
                     <h3 class="modal__preview-title">Something</h3>
                 </div>
             </div>
