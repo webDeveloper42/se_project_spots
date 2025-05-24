@@ -5,9 +5,9 @@ export function toggleLike(card){
     likeBtn.addEventListener('click' , (e) => {
         e.preventDefault();
         if(likeImg.src.includes('like.svg')){
-            likeImg.src = '../images/liked.svg';
+            likeImg.src = './images/liked.svg';
         }else{
-            likeImg.src = '../images/like.svg';
+            likeImg.src = './images/like.svg';
         }
     })
 }
