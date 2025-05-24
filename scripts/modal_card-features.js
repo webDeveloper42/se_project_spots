@@ -4,7 +4,7 @@ export function toggleLike(card){
     const likeImg = card.querySelector('#img-like');
     likeBtn.addEventListener('click' , (e) => {
         e.preventDefault();
-        if(likeImg.src.includes('like.svg')){
+        if(likeImg.src.endsWith('like.svg')){
             likeImg.src = './images/liked.svg';
         }else{
             likeImg.src = './images/like.svg';
