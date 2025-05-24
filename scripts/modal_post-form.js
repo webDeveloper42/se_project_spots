@@ -1,22 +1,39 @@
-import {openModal, closeModal, close} from './global_utils.js';
-import {initialCards} from "./gallery_data.js";
+import {close, closeModal, openModal} from './global_utils.js';
+import {enableDelete, enablePreview, toggleLike} from "./modal_card-features.js";
+import {createCard} from "./gallery_render.js";
 const addPhotoBtn = document.querySelector('#profile__add');
 const modalContainer = document.querySelector('#modal__post');
 const modalCloseBtn = document.querySelector('#modal__exit-post');
-const cardTemplate = document.querySelector('#card-template');
 const postBtn = document.querySelector('#form__save-post');
 const postImgLinkInput = document.querySelector('#image-link');
 const postCaptionInput = document.querySelector('#image-caption');
+const galleryGrid = document.querySelector('#gallery-grid');
 openModal(addPhotoBtn , modalContainer);
 closeModal(modalCloseBtn , modalContainer);
-postBtn.addEventListener('click' , (e) => {
+function makeCardData(name, link) {
+    return {
+        name: name,
+        link: link,
+        alt: `${name}`
+    };
+}
+export function setupCardFeatures(card) {
+    toggleLike(card);
+    enableDelete(card);
+    enablePreview(card);
+}
+postBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    const card = cardTemplate.content.cloneNode(true);
-    card.querySelector('#card__img').src = postImgLinkInput.value;
-    card.querySelector('#card__title').textContent = postCaptionInput.value;
+    const cardData = makeCardData(postCaptionInput.value, postImgLinkInput.value);
+    const card = createCard(cardData);
+
+    setupCardFeatures(card);
+
+    galleryGrid.appendChild(card);
     close(modalContainer);
+
     postImgLinkInput.value = '';
     postCaptionInput.value = '';
-    return initialCards.push(card)
-})
+});
+
 
