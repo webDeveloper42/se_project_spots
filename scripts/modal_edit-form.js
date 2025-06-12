@@ -19,6 +19,6 @@ editSaveBtn.addEventListener('click' , (e) => {
     editNameInput.value = profileNameTitle.textContent;
     profileDescriptionTitle.textContent = editDescriptionInput.value;
     editDescriptionInput.value = profileDescriptionTitle.textContent;
-    modalContainer.classList.remove('modal__opened');
-    modalContainer.classList.add('modal__hidden');
+    modalContainer.classList.remove('modal_opened');
+    modalContainer.classList.add('modal_hidden');
 })

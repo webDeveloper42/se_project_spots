@@ -10,8 +10,8 @@
     font-size: 20px;
     line-height: 24px;
     font-weight: 500;
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
 }
 .card__img{
     display: block;
@@ -69,15 +69,19 @@
     .card__trash{
         left:250px;
     }
+    .card{
+        height: 450px;
+    }
 }
 @media screen and (max-width:767px){
     .card{
+        height: 240px;
         font-size: 14px;
-        min-height: 318px;
+        min-height: 200px;
     }
     .card__img{
-        max-height: 288px;
-        max-width: 288px;
+        max-height: 159px;
+        max-width: 158px;
     }
     .card__content{
         max-width: 288px;
@@ -93,6 +97,6 @@
         height: 18px;
     }
     .card__trash{
-        left:238px
+        left:113px
     }
 }

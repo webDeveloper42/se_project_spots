@@ -7,7 +7,7 @@
 .gallery__grid{
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 413px);
+    grid-template-columns: repeat(3, 413px);
     column-gap: 20px;
     row-gap: 40px;
     box-sizing: border-box;
@@ -23,34 +23,65 @@
     flex-direction: column;
     gap: 12px;
 }
-@media screen and (max-width:1440px) {
+@media screen and (max-width: 1439px) {
     .gallery{
         display: flex;
         justify-content: center;
     }
     .gallery__grid{
-        grid-template-columns: repeat(3, 400px);
+        grid-template-columns: repeat(3, 293px);
         max-width: 1280px;
         justify-content: center;
         align-items: center;
     }
-    
 }
 @media screen and (max-width:1024px){
     .gallery__grid{
-        grid-template-columns: repeat(1, 300px);
+        grid-template-columns: repeat(3, 313px);
     }
 }
-@media screen and (max-width:768px){
+@media screen and (max-width: 768px) {
     .gallery{
         display: flex;
         justify-content: center;
         padding-bottom: 20px;
     }
-    .gallery__grid{
-        max-width: 288px;
-        grid-template-columns: repeat(auto-fit, 288px);
-        padding-bottom: 0px;
+    .gallery__grid {
+        grid-template-columns: repeat(3, 156px);
+        max-width: 510px;
+        padding-bottom: 0;
         gap: 20px;
     }
 }
+
+/*@media screen and (max-width:1440px) {*/
+/*    .gallery{*/
+/*        display: flex;*/
+/*        justify-content: center;*/
+/*    }*/
+/*    .gallery__grid{*/
+/*        grid-template-columns: repeat(3, 400px);*/
+/*        max-width: 1280px;*/
+/*        justify-content: center;*/
+/*        align-items: center;*/
+/*    }*/
+/*    */
+/*}*/
+/*@media screen and (max-width:1024px){*/
+/*    .gallery__grid{*/
+/*        grid-template-columns: repeat(1, 300px);*/
+/*    }*/
+/*}*/
+/*@media screen and (max-width:768px){*/
+/*    .gallery{*/
+/*        display: flex;*/
+/*        justify-content: center;*/
+/*        padding-bottom: 20px;*/
+/*    }*/
+/*    .gallery__grid{*/
+/*        max-width: 288px;*/
+/*        grid-template-columns: repeat(auto-fit, 288px);*/
+/*        padding-bottom: 0px;*/
+/*        gap: 20px;*/
+/*    }*/
+/*}*/
