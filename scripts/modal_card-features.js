@@ -1,4 +1,4 @@
-//Like Button Logic
+import { previewModal, previewImg, previewTitle } from './modal_preview-elements.js';
 export function toggleLike(card){
     const likeBtn = card.querySelector('#card__like-btn');
     const likeImg = card.querySelector('#img-like');
@@ -19,10 +19,7 @@ export function enableDelete(card){
     })
 }
 export function enablePreview(card){
-    const previewModal = document.querySelector('#modal__preview');
-    const previewImg = previewModal.querySelector('#modal__preview-img');
     const cardImg = card.querySelector('#card__img');
-    const previewTitle = previewModal.querySelector('.modal__preview-title');
     const cardTitle = card.querySelector('.card__title');
     cardImg.addEventListener('click', (e) => {
         e.preventDefault();

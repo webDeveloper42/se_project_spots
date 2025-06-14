@@ -2,7 +2,7 @@ import {initialCards} from "./gallery_data.js";
 import {enableDelete, enablePreview, toggleLike} from "./modal_card-features.js";
 
 const cardGallery = document.querySelector("#gallery-grid");
-const cardTemplate = document.querySelector("#card-template");
+const cardTemplate = cardGallery.querySelector("#card-template");
 export function createCard(data) {
     const cardClone = cardTemplate.content.cloneNode(true);
     const card = cardClone.querySelector(".gallery__card");
