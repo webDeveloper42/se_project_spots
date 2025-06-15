@@ -1,4 +1,4 @@
-import { openModal , closeModal } from './global_utils.js';
+import { open , close } from './global_utils.js';
 const editProfileBtn = document.querySelector('#profile__edit');
 const editSaveBtn = document.querySelector('#profile__save');
 const profileNameTitle = document.querySelector('#profile_name_title');
@@ -7,8 +7,8 @@ const profileDescriptionTitle = document.querySelector('#profile__profession');
 const editDescriptionInput = document.querySelector('#profile-description');
 const modalContainer = document.querySelector('#modal__edit');
 const modalCloseBtn = document.querySelector('#modal__exit-edit');
-openModal(editProfileBtn , modalContainer);
-closeModal(modalCloseBtn , modalContainer);
+editProfileBtn.addEventListener('click', () =>open(modalContainer));
+modalCloseBtn.addEventListener('click', () =>close(modalContainer));
 editNameInput.value = profileNameTitle.textContent;
 editDescriptionInput.value = profileDescriptionTitle.textContent;
 editNameInput.placeholder = profileNameTitle.textContent;
@@ -19,6 +19,5 @@ editSaveBtn.addEventListener('click' , (e) => {
     editNameInput.value = profileNameTitle.textContent;
     profileDescriptionTitle.textContent = editDescriptionInput.value;
     editDescriptionInput.value = profileDescriptionTitle.textContent;
-    modalContainer.classList.remove('modal_opened');
-    modalContainer.classList.add('modal_hidden');
+    close(modalContainer);
 })

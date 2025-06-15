@@ -1,4 +1,4 @@
-import {close, closeModal, openModal} from './global_utils.js';
+import {close, open} from './global_utils.js';
 import {enableDelete, enablePreview, toggleLike} from "./modal_card-features.js";
 import {createCard} from "./gallery_render.js";
 const addPhotoBtn = document.querySelector('#profile__add');
@@ -8,8 +8,8 @@ const postBtn = document.querySelector('#form__save-post');
 const postImgLinkInput = document.querySelector('#image-link');
 const postCaptionInput = document.querySelector('#image-caption');
 const galleryGrid = document.querySelector('#gallery-grid');
-openModal(addPhotoBtn , modalContainer);
-closeModal(modalCloseBtn , modalContainer);
+addPhotoBtn.addEventListener('click', () =>open(modalContainer));
+modalCloseBtn.addEventListener('click', () =>close(modalContainer));
 function makeCardData(name, link) {
     return {
         name: name,
