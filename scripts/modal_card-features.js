@@ -1,4 +1,5 @@
 import { previewModal, previewImg, previewTitle } from './modal_preview-elements.js';
+import { open } from './global_utils.js';
 export function toggleLike(card){
     const likeBtn = card.querySelector('#card__like-btn');
     const likeImg = card.querySelector('#img-like');
@@ -26,6 +27,6 @@ export function enablePreview(card){
         previewImg.src = cardImg.src;
         previewImg.alt = cardImg.alt;
         previewTitle.textContent = cardTitle.textContent;
-        previewModal.classList.add('modal_opened');
+        open(previewModal);
     });
 }
