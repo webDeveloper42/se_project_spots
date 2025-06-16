@@ -1,5 +1,5 @@
 .modal__div{
-    display: flex;
+    display: flex; /* Keep modal in layout flow */
     position: fixed;
     top: 0;
     left: 0;
