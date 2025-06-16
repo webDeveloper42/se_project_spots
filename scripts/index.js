@@ -5,4 +5,4 @@ import './modal_edit-form.js';
 import './modal_post-form.js';
 import './modal_card-features.js';
 import './exit-btn_component.js';
-// import './modal_preview-elements';
+import './modal_preview-elements.js';

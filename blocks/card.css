@@ -67,14 +67,21 @@
 }
 @media screen and (max-width:1024px){
     .card__trash{
-        left:250px;
+        left:153px;
     }
     .card{
-        height: 450px;
+        width:200px;
+        height: 320px;
+    }
+    .card__img{
+        width: 200px;
+        max-height: 246px;
     }
 }
-@media screen and (max-width:767px){
+
+@media screen and (max-width:768px){
     .card{
+        width: 154px;
         height: 240px;
         font-size: 14px;
         min-height: 200px;
@@ -84,7 +91,7 @@
         max-width: 158px;
     }
     .card__content{
-        max-width: 288px;
+        max-width: 158px;
     }
     .card__title{
         text-overflow: ellipsis;
