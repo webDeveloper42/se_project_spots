@@ -1,8 +1,8 @@
 import { previewModal, previewImg, previewTitle } from './modal_preview-elements.js';
 import { open } from './global_utils.js';
 export function toggleLike(card){
-    const likeBtn = card.querySelector('#card__like-btn');
-    const likeImg = card.querySelector('#img-like');
+    const likeBtn = card.querySelector('.card__like-btn');
+    const likeImg = card.querySelector('.button__img-like');
     likeBtn.addEventListener('click' , (e) => {
         e.preventDefault();
         if(likeImg.src.endsWith('like.svg')){
@@ -13,14 +13,14 @@ export function toggleLike(card){
     })
 }
 export function enableDelete(card){
-    const deleteBtn = card.querySelector('#button__delete');
+    const deleteBtn = card.querySelector('.button__delete');
     deleteBtn.addEventListener('click' , (e) => {
         e.preventDefault();
         card.remove();
     })
 }
 export function enablePreview(card){
-    const cardImg = card.querySelector('#card__img');
+    const cardImg = card.querySelector('.card__img');
     const cardTitle = card.querySelector('.card__title');
     cardImg.addEventListener('click', (e) => {
         e.preventDefault();

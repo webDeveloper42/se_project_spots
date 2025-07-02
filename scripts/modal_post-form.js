@@ -1,13 +1,13 @@
 import {close, open} from './global_utils.js';
 import {enableDelete, enablePreview, toggleLike} from "./modal_card-features.js";
 import {createCard} from "./gallery_render.js";
-const addPhotoBtn = document.querySelector('#profile__add');
-const modalContainer = document.querySelector('#modal__post');
-const modalCloseBtn = document.querySelector('#modal__exit-post');
-const postBtn = document.querySelector('#form__save-post');
+const addPhotoBtn = document.querySelector('.profile__add');
+const modalContainer = document.querySelector('.modal__post');
+const modalCloseBtn = document.querySelector('.modal__exit-post');
+const postBtn = document.querySelector('.form__save-post');
 const postImgLinkInput = document.querySelector('#image-link');
 const postCaptionInput = document.querySelector('#image-caption');
-const galleryGrid = document.querySelector('#gallery-grid');
+const galleryGrid = document.querySelector('.gallery-grid');
 addPhotoBtn.addEventListener('click', () =>open(modalContainer));
 modalCloseBtn.addEventListener('click', () =>close(modalContainer));
 function makeCardData(name, link) {
