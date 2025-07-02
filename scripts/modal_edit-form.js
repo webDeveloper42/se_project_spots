@@ -1,7 +1,7 @@
 import { open , close } from './global_utils.js';
 const editProfileBtn = document.querySelector('.profile__edit');
 const editSaveBtn = document.querySelector('.form__save');
-const profileNameTitle = document.querySelector('.profile_name_title');
+const profileNameTitle = document.querySelector('.profile__name-title');
 const editNameInput = document.querySelector('#profile-name');
 const profileDescriptionTitle = document.querySelector('.profile__profession');
 const editDescriptionInput = document.querySelector('#profile-description');
