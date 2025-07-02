@@ -25,14 +25,14 @@
     font-weight: 500;
     border-radius: 8px;
 }
-#modal__preview-exit{
+.modal__preview-exit{
     display: flex;
     justify-content: end;
     width: fit-content;
     align-self: start;
     padding:0;
 }
-#modal__preview-img-container{
+.modal__preview-img-container{
     display: flex;
     flex-direction: column;
 }
@@ -60,7 +60,7 @@
         width: 32vw;
         height: 50vh;
     }
-    #modal__preview-exit{
+    .modal__preview-exit{
         position: relative;
         left: 496px;
         top: 36px;
@@ -75,7 +75,7 @@
         width: 70vw;
         height: 50vh;
     }
-    #modal__preview-exit{
+    .modal__preview-exit{
         left: 269px;
     }
 
