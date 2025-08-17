@@ -132,6 +132,8 @@ function createCard(data) {
 initialCards.forEach((data) => {
   const card = createCard(data);
   cardGallery.appendChild(card);
+  console.log(data.name);
+  console.log(data.link);
 });
 
 // Edit profile modal
