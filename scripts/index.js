@@ -39,7 +39,6 @@ const previewTitle = previewModal.querySelector(".modal__preview-title");
 const cardGallery = document.querySelector(".gallery__grid");
 const cardTemplate = cardGallery.querySelector(".gallery__card-template");
 const editProfileBtn = document.querySelector(".profile__edit");
-const editSaveBtn = document.querySelector(".form__save");
 const profileNameTitle = document.querySelector(".profile__name-title");
 const editNameInput = document.querySelector("#profile-name");
 const profileDescriptionTitle = document.querySelector(".profile__profession");
@@ -49,10 +48,11 @@ const editModalCloseBtn = document.querySelector(".modal__exit-edit");
 const addPhotoBtn = document.querySelector(".profile__add");
 const postModal = document.querySelector(".modal__post");
 const postModalCloseBtn = document.querySelector(".modal__exit-post");
-const postBtn = document.querySelector(".form__save-post");
 const postImgLinkInput = document.querySelector("#image-link");
 const postCaptionInput = document.querySelector("#image-caption");
-const galleryGrid = document.querySelector(".gallery-grid");
+const editProfileForm = editModal.querySelector('.modal__form');
+const previewModalCloseBtn = document.querySelector('.modal__preview-exit');
+const newPostForm = postModal.querySelector('.modal__form');
 
 // Utility modal functions
 function close(modal) {
@@ -143,7 +143,7 @@ editNameInput.value = profileNameTitle.textContent;
 editDescriptionInput.value = profileDescriptionTitle.textContent;
 editNameInput.placeholder = profileNameTitle.textContent;
 editDescriptionInput.placeholder = profileDescriptionTitle.textContent;
-editSaveBtn.addEventListener("click", (e) => {
+editProfileForm.addEventListener("submit", (e) => {
   e.preventDefault();
   profileNameTitle.textContent = editNameInput.value;
   editNameInput.value = profileNameTitle.textContent;
@@ -155,12 +155,14 @@ editSaveBtn.addEventListener("click", (e) => {
 // New post modal
 addPhotoBtn.addEventListener("click", () => open(postModal));
 postModalCloseBtn.addEventListener("click", () => close(postModal));
-postBtn.addEventListener("click", (e) => {
+newPostForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const cardData = makeCardData(postCaptionInput.value, postImgLinkInput.value);
   const card = createCard(cardData);
-  galleryGrid.appendChild(card);
+  cardGallery.prepend(card);
   close(postModal);
   postImgLinkInput.value = "";
   postCaptionInput.value = "";
 });
+
+previewModalCloseBtn.addEventListener("click", () => close(previewModal));
