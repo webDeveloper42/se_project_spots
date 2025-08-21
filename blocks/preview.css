@@ -11,6 +11,7 @@
     flex-basis: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     align-items: start;
+    padding: 5.5% 0;
 }
 
 .modal__preview-title{
@@ -46,7 +47,7 @@
 }
 @media screen and (max-width:1440px){
     .modal__preview-container{
-        padding-top: 81px;
+        padding: 8% 0;
     }
 }
 @media screen and (max-width:767px){
@@ -54,7 +55,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top: 0;
+        padding: 7% 0;
     }
     .modal__preview-img{
         width: 32vw;
@@ -76,7 +77,19 @@
         height: 50vh;
     }
     .modal__preview-exit{
-        left: 269px;
+        left: 354px;
     }
+
+}
+@media screen and (max-width:375px){
+  .modal__preview-exit{
+    left: 318px;
+  }
+
+}
+@media screen and (max-width:320px){
+  .modal__preview-exit{
+    left: 266px;
+  }
 
 }

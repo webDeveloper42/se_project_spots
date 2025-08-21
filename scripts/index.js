@@ -132,23 +132,19 @@ function createCard(data) {
 initialCards.forEach((data) => {
   const card = createCard(data);
   cardGallery.appendChild(card);
-  console.log(data.name);
-  console.log(data.link);
 });
 
 // Edit profile modal
-editProfileBtn.addEventListener("click", () => open(editModal));
+editProfileBtn.addEventListener("click", () => {
+  open(editModal);
+  editNameInput.value = profileNameTitle.textContent;
+  editDescriptionInput.value = profileDescriptionTitle.textContent;
+});
 editModalCloseBtn.addEventListener("click", () => close(editModal));
-editNameInput.value = profileNameTitle.textContent;
-editDescriptionInput.value = profileDescriptionTitle.textContent;
-editNameInput.placeholder = profileNameTitle.textContent;
-editDescriptionInput.placeholder = profileDescriptionTitle.textContent;
 editProfileForm.addEventListener("submit", (e) => {
   e.preventDefault();
   profileNameTitle.textContent = editNameInput.value;
-  editNameInput.value = profileNameTitle.textContent;
   profileDescriptionTitle.textContent = editDescriptionInput.value;
-  editDescriptionInput.value = profileDescriptionTitle.textContent;
   close(editModal);
 });
 
