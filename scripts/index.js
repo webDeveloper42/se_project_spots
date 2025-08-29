@@ -50,9 +50,9 @@ const postModal = document.querySelector(".modal__post");
 const postModalCloseBtn = document.querySelector(".modal__exit-post");
 const postImgLinkInput = document.querySelector("#image-link");
 const postCaptionInput = document.querySelector("#image-caption");
-const editProfileForm = editModal.querySelector('.modal__form');
-const previewModalCloseBtn = document.querySelector('.modal__preview-exit');
-const newPostForm = postModal.querySelector('.modal__form');
+const editProfileForm = editModal.querySelector(".modal__form");
+const previewModalCloseBtn = document.querySelector(".modal__preview-exit");
+const newPostForm = postModal.querySelector(".modal__form");
 
 // Utility modal functions
 function close(modal) {
@@ -95,13 +95,13 @@ function enablePreview(card) {
     open(previewModal);
   });
 }
-const exitBtn = document.querySelectorAll('.modal__exit');
-exitBtn.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const modal = btn.closest('.modal__div');
+const exitBtn = document.querySelectorAll(".modal__exit");
+exitBtn.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const modal = btn.closest(".modal__div");
     close(modal);
-  })
-})
+  });
+});
 function setupCardFeatures(card) {
   toggleLike(card);
   enableDelete(card);

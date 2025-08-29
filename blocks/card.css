@@ -1,109 +1,108 @@
-.card__content{
-    display: flex;
-    justify-content: space-between;
+.card__content {
+  display: flex;
+  justify-content: space-between;
 }
-.card__title{
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    max-width: 353px;
-    font-size: 20px;
-    line-height: 24px;
-    font-weight: 500;
-    padding: 0;
-    margin: 0;
+.card__title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 353px;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
 }
-.card__img{
-    display: block;
-    width: 100%;
-    max-height: 413px;
-    border-radius: 8px;
-    object-fit: cover;
-    cursor: pointer;
+.card__img {
+  display: block;
+  width: 100%;
+  max-height: 413px;
+  border-radius: 8px;
+  object-fit: cover;
+  cursor: pointer;
 }
-.default{
-    opacity: 40%;
+.default {
+  opacity: 40%;
 }
 .card__like,
-.card__trash{
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
+.card__trash {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
-.card__like-img{
-    width: 23px;
-    height: 20px;
+.card__like-img {
+  width: 23px;
+  height: 20px;
 }
-.card__trash{
-    width: 32px;
-    height: 32px;
-    position: relative;
-    align-items: center;
-    left: 350px;
-    top: 53px;
+.card__trash {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  align-items: center;
+  left: 350px;
+  top: 53px;
 }
-.card__trash-img{
-    width: 32px;
-    height: 32px;
+.card__trash-img {
+  width: 32px;
+  height: 32px;
 }
 .card__like:hover,
-.card__trash:hover{
-    opacity: 100%;
+.card__trash:hover {
+  opacity: 100%;
 }
-.clicked{
-    opacity: 100%;
+.clicked {
+  opacity: 100%;
 }
-.clicked:hover{
-    opacity: 40%;
+.clicked:hover {
+  opacity: 40%;
 }
-.card-noDisplay{
-    display: none;
+.card-noDisplay {
+  display: none;
 }
-@media screen and (max-width:1440px) {
-    .card__title{
-        font-size: 24px;
-    }
+@media screen and (max-width: 1440px) {
+  .card__title {
+    font-size: 24px;
+  }
 }
-@media screen and (max-width:1024px){
-    .card__trash{
-        left:153px;
-    }
-    .card{
-        width:200px;
-        height: 320px;
-    }
-    .card__img{
-        width: 200px;
-        max-height: 246px;
-    }
+@media screen and (max-width: 1024px) {
+  .card__trash {
+    left: 153px;
+  }
+  .card {
+    width: 200px;
+    height: 320px;
+  }
+  .card__img {
+    width: 200px;
+    max-height: 246px;
+  }
 }
 
-@media screen and (max-width:768px){
-    .card{
-        width: 154px;
-        height: 240px;
-        font-size: 14px;
-        min-height: 200px;
-    }
-    .card__img{
-        max-height: 159px;
-        max-width: 158px;
-    }
-    .card__content{
-        max-width: 158px;
-    }
-    .card__title{
-        text-overflow: ellipsis;
-        align-items: end;
-        font-size: 16px;
-        max-width: 288px;
-
-    }
-    .card__like{
-        height: 18px;
-    }
-    .card__trash{
-        left:113px
-    }
+@media screen and (max-width: 768px) {
+  .card {
+    width: 154px;
+    height: 240px;
+    font-size: 14px;
+    min-height: 200px;
+  }
+  .card__img {
+    max-height: 159px;
+    max-width: 158px;
+  }
+  .card__content {
+    max-width: 158px;
+  }
+  .card__title {
+    text-overflow: ellipsis;
+    align-items: end;
+    font-size: 16px;
+    max-width: 288px;
+  }
+  .card__like {
+    height: 18px;
+  }
+  .card__trash {
+    left: 113px;
+  }
 }

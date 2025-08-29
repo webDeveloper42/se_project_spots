@@ -1,59 +1,59 @@
-.gallery{
-    display: flex;
-    padding-top: 20px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid rgba(33,33,33,0.4);
+.gallery {
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(33, 33, 33, 0.4);
 }
-.gallery__grid{
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(3, 413px);
-    column-gap: 20px;
-    row-gap: 40px;
-    box-sizing: border-box;
-    max-width: 100%;
-    margin: 0 auto;
+.gallery__grid {
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 413px);
+  column-gap: 20px;
+  row-gap: 40px;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0 auto;
 }
-.gallery__card{
-    padding: 0;
-    margin: 0;
-    min-width: 100%;
-    min-height: 318px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+.gallery__card {
+  padding: 0;
+  margin: 0;
+  min-width: 100%;
+  min-height: 318px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 @media screen and (max-width: 1439px) {
-    .gallery{
-        display: flex;
-        justify-content: center;
-    }
-    .gallery__grid{
-        grid-template-columns: repeat(3, 200px);
-        max-width: 1280px;
-        justify-content: center;
-        align-items: center;
-        row-gap: 0;
-    }
+  .gallery {
+    display: flex;
+    justify-content: center;
+  }
+  .gallery__grid {
+    grid-template-columns: repeat(3, 200px);
+    max-width: 1280px;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0;
+  }
 }
-@media screen and (max-width:768px){
-    .gallery__grid{
-        grid-template-columns: repeat(3, 160px);
-        max-width: 720px;
-        row-gap: 0;
-    }
+@media screen and (max-width: 768px) {
+  .gallery__grid {
+    grid-template-columns: repeat(3, 160px);
+    max-width: 720px;
+    row-gap: 0;
+  }
 }
-@media screen and (max-width:546px) {
-    .gallery{
-        display: flex;
-        justify-content: center;
-        padding-bottom: 20px;
-    }
-    .gallery__grid {
-        grid-template-columns: 1fr;
-        max-width: 425px;
-        padding-bottom: 0;
-        gap: 20px;
-        row-gap: 0;
-    }
+@media screen and (max-width: 546px) {
+  .gallery {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+  }
+  .gallery__grid {
+    grid-template-columns: 1fr;
+    max-width: 425px;
+    padding-bottom: 0;
+    gap: 20px;
+    row-gap: 0;
+  }
 }
