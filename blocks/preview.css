@@ -32,6 +32,11 @@
   width: fit-content;
   align-self: start;
   padding: 0;
+  position: relative;
+  top: -10px;
+  width: 40px;
+  height: 40px;
+  left: 7px;
 }
 .modal__preview-img-container {
   display: flex;
@@ -86,6 +91,7 @@
 }
 @media screen and (max-width: 320px) {
   .modal__preview-exit {
-    left: 266px;
+    left: 232px;
+    top: 3px;
   }
 }
