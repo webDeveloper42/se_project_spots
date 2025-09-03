@@ -8,184 +8,48 @@
     <link rel="stylesheet" href="./pages/index.css" />
   </head>
   <body>
-    <header class="header">
-      <img class="header__logo" src="./images/Logo.svg" alt="spots logo" />
+    <header class="menubar">
+      <div class="menubar__logo">
+        <img
+          class="menubar__logo-image"
+          src="./images/Logo.svg"
+          alt="Menubar Logo"
+        />
+      </div>
     </header>
-    <div class="page">
-      <main>
-        <section class="profile profile-section">
-          <div class="profile__header">
-            <div class="profile__editable-content">
-              <img
-                class="profile__image"
-                src="./images/avatar.jpg"
-                alt="avatar profile picture"
-              />
-              <div class="profile__content">
-                <div class="profile__description">
-                  <h1 class="profile__name profile__name-title">
-                    Bessie Coleman
-                  </h1>
-                  <p class="profile__profession">Civil Aviator</p>
-                </div>
-                <button type="button" class="button profile__edit">
-                  <img
-                    class="button__icon"
-                    src="./images/edit-icon.svg"
-                    alt="edit button icon"
-                  />
-                  <span class="button__text"> Edit Profile </span>
-                </button>
-              </div>
+    <main class="page">
+      <section class="avatar-section">
+        <div class="avatar-section__avatar">
+          <div class="avatar-section__avatar-img-content">
+            <img
+              class="avatar-section__avatar-img"
+              src="./images/avatar.jpg"
+              alt="Avatar Image"
+            />
+          </div>
+          <div class="avatar-section__content">
+            <div class="avatar-section__avatar-text-content">
+              <h1 class="avatar-section__name"></h1>
+              <p class="avatar-section__profession"></p>
             </div>
-            <button class="button profile__add">
+          </div>
+          <div class="avatar-section__edit-btn-content">
+            <button class="avatar-section__edit-btn">
               <img
-                class="button__icon"
-                src="./images/plus-icon.svg"
-                alt="button icon"
+                src="./images/edit-icon.svg"
+                alt="Pencil image for edit button"
+                class="avatar-section__edit-btn-img"
               />
-              <span class="button__text button__post">New Post</span>
+              <div class="avatar-section__text">Edit Profile</div>
             </button>
           </div>
-        </section>
-        <section class="gallery gallery-section">
-          <ul class="gallery__grid">
-            <template class="gallery__card-template card-template">
-              <li class="card gallery__card">
-                <button class="button card__trash default button__delete">
-                  <img
-                    class="button__img-trash"
-                    src="./images/trashDefault.svg"
-                    alt="trash button"
-                  />
-                </button>
-                <img src="" alt="card image" class="card__img" />
-                <div class="card__content">
-                  <h2 class="card__title">Card Title</h2>
-                  <button class="button card__like default card__like-btn">
-                    <img
-                      class="button__img-like img-like"
-                      src="./images/like.svg"
-                      alt="like button"
-                    />
-                  </button>
-                </div>
-              </li>
-            </template>
-          </ul>
-        </section>
-      </main>
-      <footer class="footer">
-        <p class="footer__copyright">2023 &copy; Spots</p>
-      </footer>
-      <div class="modal__div modal__edit">
-        <div class="modal__container">
-          <section class="modal__header">
-            <h2 class="modal__heading">Edit profile</h2>
-            <button class="button modal__exit modal__exit-edit">
-              <img
-                class="modal__img"
-                src="./images/exit-button_off.svg"
-                alt="exit logo"
-              />
-            </button>
-          </section>
-          <form class="form modal__form">
-            <section class="form__body">
-              <label for="profile-name" class="form__label form__label-name"
-                >Name
-              </label>
-              <input
-                type="text"
-                class="form__input"
-                id="profile-name"
-                name="profile-name"
-                placeholder="Bessie Coleman"
-              />
-              <label
-                for="profile-description"
-                class="form__label form__label-description"
-                >Description
-              </label>
-              <input
-                type="text"
-                class="form__input"
-                id="profile-description"
-                name="profile-description"
-                placeholder="Civil Aviator"
-              />
-            </section>
-            <section class="form__footer">
-              <button type="submit" class="button form__save">Save</button>
-            </section>
-          </form>
         </div>
-      </div>
-      <div class="modal__div modal__post">
-        <div class="modal__container modal__post-container">
-          <section class="modal__header">
-            <h2 class="modal__heading">New Post</h2>
-            <button class="button modal__exit modal__exit-post">
-              <img
-                class="modal__img"
-                src="./images/exit-button_off.svg"
-                alt="exit logo"
-              />
-            </button>
-          </section>
-          <form class="form modal__form">
-            <section class="form__body">
-              <label for="image-link" class="form__label form__label-name"
-                >Image link
-                <input
-                  type="text"
-                  class="form__input"
-                  id="image-link"
-                  name="image-link"
-                  placeholder="Paste a link to the picture"
-                />
-              </label>
-              <label
-                for="image-caption"
-                class="form__label form__label-description"
-                >Caption
-                <input
-                  type="text"
-                  class="form__input"
-                  id="image-caption"
-                  name="image-caption"
-                  placeholder="Type your caption"
-                />
-              </label>
-            </section>
-            <section class="form__footer">
-              <button type="submit" class="form__save-post button form__save">
-                Save
-              </button>
-            </section>
-          </form>
+
+        <div class="avatar-section__btn-content">
+          <button class="avatar-section__btn">&plus; New Post</button>
         </div>
-      </div>
-      <div class="modal__div modal__preview">
-        <div class="modal__preview-container">
-          <button class="button modal__exit modal__preview-exit">
-            <img
-              class="modal__img"
-              src="./images/default-invert-x.svg"
-              alt="exit logo"
-            />
-          </button>
-          <div class="modal__preview-img-container">
-            <img
-              src="./images/2-photo-by-ceiline-from-pexels.jpg"
-              alt="card image"
-              class="modal__preview-img"
-            />
-            <h3 class="modal__preview-title">Something</h3>
-          </div>
-        </div>
-      </div>
-    </div>
+      </section>
+    </main>
     <script src="./scripts/index.js" defer></script>
   </body>
 </html>
