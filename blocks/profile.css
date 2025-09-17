@@ -102,23 +102,7 @@
   padding: 0;
   margin: 0;
 }
-@media screen and (max-width: 1440px) {
-  .card__img {
-    width: 100%;
-    overflow: hidden;
-  }
-}
-@media screen and (max-width: 1024px) {
-  .profile__content {
-    max-width: 200px;
-  }
-  .profile__name {
-    font-size: 32px;
-  }
-  .profile__button {
-    padding: 10px;
-  }
-}
+
 @media screen and (max-width: 768px) {
   .profile {
     display: flex;
