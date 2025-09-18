@@ -42,14 +42,16 @@
   align-items: center;
   left: 350px;
   top: 53px;
+  border-radius: 50%;
+  background-image: url(../images/trashDefault.svg);
+  background-size: cover;
 }
-.card__trash-img {
-  width: 32px;
-  height: 32px;
+.card__like:hover {
+  opacity: 100%;
 }
-.card__like:hover,
 .card__trash:hover {
   opacity: 100%;
+  background-color: #ff6565;
 }
 .clicked {
   opacity: 100%;

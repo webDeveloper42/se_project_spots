@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="./vendor/normalize.css" />
     <link rel="stylesheet" href="./pages/index.css" />
   </head>
-  <body>
+  <body class="page">
     <header class="header">
       <img class="header__logo" src="./images/Logo.svg" alt="spots logo" />
     </header>
-    <div class="page">
+    <div class="content">
       <main>
-        <section class="profile profile-section">
+        <section class="profile page-section">
           <div class="profile__header">
             <div class="profile__editable-content">
               <img
@@ -48,17 +48,13 @@
             </button>
           </div>
         </section>
-        <section class="gallery gallery-section">
+        <section class="gallery page-section">
           <ul class="gallery__grid">
             <template class="gallery__card-template card-template">
               <li class="card gallery__card">
-                <button class="button card__trash default button__delete">
-                  <img
-                    class="button__img-trash"
-                    src="./images/trashDefault.svg"
-                    alt="trash button"
-                  />
-                </button>
+                <button
+                  class="button card__trash default button__delete"
+                ></button>
                 <img src="" alt="card image" class="card__img" />
                 <div class="card__content">
                   <h2 class="card__title">Card Title</h2>
@@ -75,7 +71,7 @@
           </ul>
         </section>
       </main>
-      <footer class="footer">
+      <footer class="footer page-section">
         <p class="footer__copyright">2023 &copy; Spots</p>
       </footer>
       <div class="modal__div modal__edit">

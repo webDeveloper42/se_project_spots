@@ -1,14 +1,17 @@
 .page {
-  margin: 0 auto;
   background-color: #fcf5e5;
   font-family: "Poppins", Arial, sans-serif;
-  padding: 30px 70px 0;
-  max-width: 1280px;
   align-items: stretch;
   display: flex;
   flex-direction: column;
 }
-
+.page-section {
+  width: 100%;
+  max-width: 1280px;
+  box-sizing: border-box;
+  position: relative;
+  margin: 0 auto;
+}
 @media screen and (max-width: 320px) {
   .page {
     padding: 0;
