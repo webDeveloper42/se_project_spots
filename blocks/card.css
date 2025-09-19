@@ -62,3 +62,8 @@
 .card-noDisplay {
   display: none;
 }
+@media screen and (max-width: 627px) {
+  .card__trash {
+    left: 248px;
+  }
+}
