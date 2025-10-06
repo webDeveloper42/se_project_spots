@@ -137,8 +137,8 @@ initialCards.forEach((data) => {
 // Edit profile modal
 editProfileBtn.addEventListener("click", () => {
   open(editModal);
-  editNameInput.value = profileNameTitle.textContent;
-  editDescriptionInput.value = profileDescriptionTitle.textContent;
+  editNameInput.value = profileNameTitle.textContent.trim();
+  editDescriptionInput.value = profileDescriptionTitle.textContent.trim();
 });
 editModalCloseBtn.addEventListener("click", () => close(editModal));
 editProfileForm.addEventListener("submit", (e) => {
