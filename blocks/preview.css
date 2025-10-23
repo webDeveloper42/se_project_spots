@@ -12,6 +12,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   align-items: start;
   padding: 5.5% 0;
+  padding-top: 50px;
 }
 
 .modal__preview-title {

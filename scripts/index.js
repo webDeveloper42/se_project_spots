@@ -53,6 +53,8 @@ const postCaptionInput = document.querySelector("#image-caption");
 const editProfileForm = editModal.querySelector(".modal__form");
 const previewModalCloseBtn = document.querySelector(".modal__preview-exit");
 const newPostForm = postModal.querySelector(".modal__form");
+const cardSubmitBtn = postModal.querySelector(".form__save");
+const profileSubmitBtn = editModal.querySelector(".form__save");
 
 // Utility modal functions
 function close(modal) {
@@ -139,12 +141,18 @@ editProfileBtn.addEventListener("click", () => {
   open(editModal);
   editNameInput.value = profileNameTitle.textContent.trim();
   editDescriptionInput.value = profileDescriptionTitle.textContent.trim();
+  resetValidation(editProfileForm, [editNameInput, editDescriptionInput]);
 });
 editModalCloseBtn.addEventListener("click", () => close(editModal));
 editProfileForm.addEventListener("submit", (e) => {
   e.preventDefault();
   profileNameTitle.textContent = editNameInput.value;
   profileDescriptionTitle.textContent = editDescriptionInput.value;
+  const inputList = Array.from(
+    editProfileForm.querySelectorAll(settings.inputSelector)
+  );
+  resetValidation(editProfileForm, inputList, settings);
+  disableButton(profileSubmitBtn, settings);
   close(editModal);
 });
 
@@ -156,9 +164,13 @@ newPostForm.addEventListener("submit", (e) => {
   const cardData = makeCardData(postCaptionInput.value, postImgLinkInput.value);
   const card = createCard(cardData);
   cardGallery.prepend(card);
+  newPostForm.reset();
+  const inputList = Array.from(
+    newPostForm.querySelectorAll(settings.inputSelector)
+  );
+  resetValidation(newPostForm, inputList, settings);
+  disableButton(cardSubmitBtn, settings);
   close(postModal);
-  postImgLinkInput.value = "";
-  postCaptionInput.value = "";
 });
 
 previewModalCloseBtn.addEventListener("click", () => close(previewModal));
