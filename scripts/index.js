@@ -55,15 +55,36 @@ const previewModalCloseBtn = document.querySelector(".modal__preview-exit");
 const newPostForm = postModal.querySelector(".modal__form");
 const cardSubmitBtn = postModal.querySelector(".form__save");
 const profileSubmitBtn = editModal.querySelector(".form__save");
-
 // Utility modal functions
 function close(modal) {
   modal.classList.remove("modal_opened");
 }
+function escExit(modal) {
+  document.addEventListener("keydown", (e) => checkKeyPress(e, modal));
+}
 function open(modal) {
   modal.classList.add("modal_opened");
 }
-
+function checkKeyPress(e, modal) {
+  if (e.key === "Escape" || e.key === "esc") {
+    console.log("pressed");
+    close(modal);
+  }
+}
+//TODO fix event bubling when pressing esc to exit modal
+//TODO fix error on console when edit modal opens(something about validation)
+function overlayExit(overlay, modal) {
+  overlay.addEventListener("click", () => {
+    console.log("clicked");
+    close(modal);
+  });
+}
+const overlayPost = postModal.querySelector(".modal__overlay");
+overlayExit(overlayPost, postModal);
+const overlayEdit = editModal.querySelector(".modal__overlay");
+overlayExit(overlayEdit, editModal);
+const overlayPreview = previewModal.querySelector(".modal__overlay");
+overlayExit(overlayPreview, previewModal);
 // Feature setup
 function toggleLike(card) {
   const likeBtn = card.querySelector(".card__like-btn");
@@ -96,6 +117,7 @@ function enablePreview(card) {
     previewTitle.textContent = cardTitle.textContent;
     open(previewModal);
   });
+  escExit(previewModal);
 }
 const exitBtn = document.querySelectorAll(".modal__exit");
 exitBtn.forEach((btn) => {
@@ -143,7 +165,6 @@ editProfileBtn.addEventListener("click", () => {
   editDescriptionInput.value = profileDescriptionTitle.textContent.trim();
   resetValidation(editProfileForm, [editNameInput, editDescriptionInput]);
 });
-editModalCloseBtn.addEventListener("click", () => close(editModal));
 editProfileForm.addEventListener("submit", (e) => {
   e.preventDefault();
   profileNameTitle.textContent = editNameInput.value;
@@ -155,10 +176,9 @@ editProfileForm.addEventListener("submit", (e) => {
   disableButton(profileSubmitBtn, settings);
   close(editModal);
 });
-
+escExit(editModal);
 // New post modal
 addPhotoBtn.addEventListener("click", () => open(postModal));
-postModalCloseBtn.addEventListener("click", () => close(postModal));
 newPostForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const cardData = makeCardData(postCaptionInput.value, postImgLinkInput.value);
@@ -172,5 +192,6 @@ newPostForm.addEventListener("submit", (e) => {
   disableButton(cardSubmitBtn, settings);
   close(postModal);
 });
+escExit(postModal);
 
 previewModalCloseBtn.addEventListener("click", () => close(previewModal));
