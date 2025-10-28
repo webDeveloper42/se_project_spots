@@ -67,15 +67,11 @@ function open(modal) {
 }
 function checkKeyPress(e, modal) {
   if (e.key === "Escape" || e.key === "esc") {
-    console.log("pressed");
     close(modal);
   }
 }
-//TODO fix event bubling when pressing esc to exit modal
-//TODO fix error on console when edit modal opens(something about validation)
 function overlayExit(overlay, modal) {
   overlay.addEventListener("click", () => {
-    console.log("clicked");
     close(modal);
   });
 }
@@ -163,7 +159,11 @@ editProfileBtn.addEventListener("click", () => {
   open(editModal);
   editNameInput.value = profileNameTitle.textContent.trim();
   editDescriptionInput.value = profileDescriptionTitle.textContent.trim();
-  resetValidation(editProfileForm, [editNameInput, editDescriptionInput]);
+  resetValidation(
+    editProfileForm,
+    [editNameInput, editDescriptionInput],
+    settings
+  );
 });
 editProfileForm.addEventListener("submit", (e) => {
   e.preventDefault();
