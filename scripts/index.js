@@ -43,7 +43,7 @@ const profileNameTitle = document.querySelector(".profile__name-title");
 const editNameInput = document.querySelector("#profile-name");
 const profileDescriptionTitle = document.querySelector(".profile__profession");
 const editDescriptionInput = document.querySelector("#profile-description");
-const editModal = document.querySelector(".modal__edit");
+const editModal = document.querySelector(".modal--edit");
 const editModalCloseBtn = document.querySelector(".modal__exit-edit");
 const addPhotoBtn = document.querySelector(".profile__add");
 const postModal = document.querySelector(".modal__post");
@@ -118,7 +118,7 @@ function enablePreview(card) {
 const exitBtn = document.querySelectorAll(".modal__exit");
 exitBtn.forEach((btn) => {
   btn.addEventListener("click", () => {
-    const modal = btn.closest(".modal__div");
+    const modal = btn.closest(".modal");
     close(modal);
   });
 });

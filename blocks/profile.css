@@ -55,7 +55,7 @@
 .profile__profession {
   font-size: 16px;
   line-height: 16px;
-  opacity: 70%;
+  opacity: 0.7;
 }
 .profile__edit {
   width: 107.34px;
@@ -68,7 +68,7 @@
   color: rgb(33, 33, 33);
   padding: 0;
   cursor: pointer;
-  opacity: 70%;
+  opacity: 0.7;
 }
 .profile__edit:hover {
   opacity: 1;
@@ -93,7 +93,7 @@
   border: none;
 }
 .profile__add:hover {
-  opacity: 80%;
+  opacity: 0.8;
 }
 .profile__add .button__icon {
   color: rgba(252, 245, 229, 1);

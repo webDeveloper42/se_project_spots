@@ -22,7 +22,7 @@
   cursor: pointer;
 }
 .default {
-  opacity: 40%;
+  opacity: 0.4;
 }
 .card__like,
 .card__trash {
@@ -47,17 +47,17 @@
   background-size: cover;
 }
 .card__like:hover {
-  opacity: 100%;
+  opacity: 1;
 }
 .card__trash:hover {
-  opacity: 100%;
+  opacity: 1;
   background-color: #ff6565;
 }
 .clicked {
-  opacity: 100%;
+  opacity: 1;
 }
 .clicked:hover {
-  opacity: 40%;
+  opacity: 0.4;
 }
 .card-noDisplay {
   display: none;

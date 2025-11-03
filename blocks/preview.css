@@ -43,6 +43,7 @@
 .modal__preview-img-container {
   display: flex;
   flex-direction: column;
+  background-color: transparent;
 }
 .modal__preview-img {
   max-width: 80vw;
