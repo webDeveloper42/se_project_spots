@@ -19,3 +19,7 @@ This project is made so all the elements are displayed correctly on popular scre
 
 **Video Project**
 [Landing Page Responsive Design](https://www.youtube.com/watch?v=89_pBA8PJVk)
+
+## Project Pitch Videos
+
+Check out [this video](https://www.loom.com/share/ed4134df86344beb9d5f2cffec3c85ac), where I describe my project abd some challenges I faced while building it.
