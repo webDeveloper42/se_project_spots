@@ -1,6 +1,7 @@
 .card__content {
   display: flex;
   justify-content: space-between;
+  padding-top: 12px;
 }
 .card__title {
   text-overflow: ellipsis;
@@ -35,13 +36,15 @@
   width: 23px;
   height: 20px;
 }
+
 .card__trash {
   width: 32px;
   height: 32px;
-  position: relative;
   align-items: center;
-  left: 370px;
-  top: 53px;
+  align-self: flex-end;
+  position: absolute;
+  top: 16px;
+  right: 10px;
   border-radius: 50%;
   background-image: url(../images/trashDefault.svg);
   background-size: cover;
@@ -53,15 +56,7 @@
   opacity: 1;
   background-color: #ff6565;
 }
-.clicked {
-  opacity: 1;
-}
-.clicked:hover {
-  opacity: 0.4;
-}
-.card-noDisplay {
-  display: none;
-}
+
 @media screen and (max-width: 627px) {
   .card__trash {
     left: 248px;

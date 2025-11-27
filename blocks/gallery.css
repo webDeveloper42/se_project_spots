@@ -22,7 +22,7 @@
   min-height: 318px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  position: relative;
 }
 @media screen and (max-width: 627px) {
   .gallery {
