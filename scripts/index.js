@@ -57,17 +57,19 @@ const cardSubmitBtn = postModal.querySelector(".form__save");
 const profileSubmitBtn = editModal.querySelector(".form__save");
 // Utility modal functions
 function close(modal) {
-  modal.classList.remove("modal_opened");
-}
-function escExit(modal) {
-  document.addEventListener("keydown", (e) => checkKeyPress(e, modal));
+  modal.classList.remove("modal__opened");
+  document.removeEventListener("keydown", checkKeyPress);
 }
 function open(modal) {
-  modal.classList.add("modal_opened");
+  modal.classList.add("modal__opened");
+  document.addEventListener("keydown", checkKeyPress);
 }
-function checkKeyPress(e, modal) {
-  if (e.key === "Escape" || e.key === "esc") {
-    close(modal);
+function checkKeyPress(e) {
+  if (e.key === "Escape") {
+    const openModal = document.querySelector(".modal__opened");
+    if (openModal) {
+      close(openModal);
+    }
   }
 }
 function overlayExit(overlay, modal) {
@@ -113,7 +115,6 @@ function enablePreview(card) {
     previewTitle.textContent = cardTitle.textContent;
     open(previewModal);
   });
-  escExit(previewModal);
 }
 const exitBtn = document.querySelectorAll(".modal__exit");
 exitBtn.forEach((btn) => {
@@ -176,7 +177,6 @@ editProfileForm.addEventListener("submit", (e) => {
   disableButton(profileSubmitBtn, settings);
   close(editModal);
 });
-escExit(editModal);
 // New post modal
 addPhotoBtn.addEventListener("click", () => open(postModal));
 newPostForm.addEventListener("submit", (e) => {
@@ -192,6 +192,5 @@ newPostForm.addEventListener("submit", (e) => {
   disableButton(cardSubmitBtn, settings);
   close(postModal);
 });
-escExit(postModal);
 
 previewModalCloseBtn.addEventListener("click", () => close(previewModal));
