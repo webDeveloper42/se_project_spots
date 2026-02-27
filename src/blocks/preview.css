@@ -10,7 +10,7 @@
   width: 100vw;
   flex-basis: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  align-items: start;
+  align-items: flex-start;
   padding: 0;
   padding-top: 50px;
 }
@@ -29,7 +29,7 @@
 }
 .modal__preview-exit {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   width: fit-content;
   align-self: start;
   padding: 0;

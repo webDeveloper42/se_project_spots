@@ -6,14 +6,14 @@
 .profile__header {
   display: flex;
   justify-content: space-between;
-  align-items: end;
+  align-items: flex-end;
 }
 .profile__content {
   display: flex;
 }
 .profile__editable-content {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   gap: 20px;
 }
 .profile__image {

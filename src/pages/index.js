@@ -1,3 +1,12 @@
+import "./index.css";
+import likeIcon from "../images/like.svg";
+import likedIcon from "../images/liked.svg";
+import {
+  enableValidation,
+  settings,
+  resetValidation,
+  disableButton,
+} from "../scripts/validation.js";
 // Initial card data
 const initialCards = [
   {
@@ -87,12 +96,15 @@ overlayExit(overlayPreview, previewModal);
 function toggleLike(card) {
   const likeBtn = card.querySelector(".card__like-btn");
   const likeImg = card.querySelector(".button__img-like");
+  let isLiked = false;
   likeBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    if (likeImg.src.endsWith("like.svg")) {
-      likeImg.src = "./images/liked.svg";
+    if (isLiked) {
+      likeImg.src = likeIcon;
+      isLiked = false;
     } else {
-      likeImg.src = "./images/like.svg";
+      likeImg.src = likedIcon;
+      isLiked = true;
     }
   });
 }
@@ -163,7 +175,7 @@ editProfileBtn.addEventListener("click", () => {
   resetValidation(
     editProfileForm,
     [editNameInput, editDescriptionInput],
-    settings
+    settings,
   );
 });
 editProfileForm.addEventListener("submit", (e) => {
@@ -171,7 +183,7 @@ editProfileForm.addEventListener("submit", (e) => {
   profileNameTitle.textContent = editNameInput.value;
   profileDescriptionTitle.textContent = editDescriptionInput.value;
   const inputList = Array.from(
-    editProfileForm.querySelectorAll(settings.inputSelector)
+    editProfileForm.querySelectorAll(settings.inputSelector),
   );
   resetValidation(editProfileForm, inputList, settings);
   disableButton(profileSubmitBtn, settings);
@@ -186,7 +198,7 @@ newPostForm.addEventListener("submit", (e) => {
   cardGallery.prepend(card);
   newPostForm.reset();
   const inputList = Array.from(
-    newPostForm.querySelectorAll(settings.inputSelector)
+    newPostForm.querySelectorAll(settings.inputSelector),
   );
   resetValidation(newPostForm, inputList, settings);
   disableButton(cardSubmitBtn, settings);
@@ -194,3 +206,4 @@ newPostForm.addEventListener("submit", (e) => {
 });
 
 previewModalCloseBtn.addEventListener("click", () => close(previewModal));
+enableValidation(settings);

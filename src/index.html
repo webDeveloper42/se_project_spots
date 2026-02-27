@@ -1,15 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spots</title>
-    <link rel="stylesheet" href="./vendor/normalize.css" />
-    <link rel="stylesheet" href="./pages/index.css" />
   </head>
   <body class="page">
     <header class="header">
-      <img class="header__logo" src="./images/Logo.svg" alt="spots logo" />
+      <img
+        class="header__logo"
+        src="<%=require('./images/Logo.svg')%>"
+        alt="spots logo"
+      />
     </header>
     <div class="content">
       <main>
@@ -18,7 +20,7 @@
             <div class="profile__editable-content">
               <img
                 class="profile__image"
-                src="./images/avatar.jpg"
+                src="<%=require('./images/avatar.jpg')%>"
                 alt="avatar profile picture"
               />
               <div class="profile__content">
@@ -31,7 +33,7 @@
                 <button type="button" class="button profile__edit">
                   <img
                     class="button__icon"
-                    src="./images/edit-icon.svg"
+                    src="<%=require('./images/edit-icon.svg')%>"
                     alt="edit button icon"
                   />
                   <span class="button__text"> Edit Profile </span>
@@ -41,7 +43,7 @@
             <button class="button profile__add">
               <img
                 class="button__icon"
-                src="./images/plus-icon.svg"
+                src="<%=require('./images/plus-icon.svg')%>"
                 alt="button icon"
               />
               <span class="button__text button__post">New Post</span>
@@ -61,7 +63,7 @@
                   <button class="button card__like default card__like-btn">
                     <img
                       class="button__img-like img-like"
-                      src="./images/like.svg"
+                      src="<%=require('./images/like.svg')%>"
                       alt="like button"
                     />
                   </button>
@@ -82,7 +84,7 @@
             <button class="button modal__exit modal__exit-edit">
               <img
                 class="modal__img"
-                src="./images/exit-button_off.svg"
+                src="<%=require('./images/exit-button_off.svg')%>"
                 alt="exit logo"
               />
             </button>
@@ -134,7 +136,7 @@
             <button class="button modal__exit modal__exit-post">
               <img
                 class="modal__img"
-                src="./images/exit-button_off.svg"
+                src="<%=require('./images/exit-button_off.svg')%>"
                 alt="exit logo"
               />
             </button>
@@ -185,12 +187,12 @@
             <button class="button modal__exit modal__preview-exit">
               <img
                 class="modal__img"
-                src="./images/default-invert-x.svg"
+                src="<%=require('./images/default-invert-x.svg')%>"
                 alt="exit logo"
               />
             </button>
             <img
-              src="./images/2-photo-by-ceiline-from-pexels.jpg"
+              src="<%=require('./images/2-photo-by-ceiline-from-pexels.jpg')%>"
               alt="card title"
               class="modal__preview-img"
             />
@@ -199,7 +201,5 @@
         </div>
       </div>
     </div>
-    <script src="./scripts/index.js" defer></script>
-    <script src="./scripts/validation.js" defer></script>
   </body>
 </html>
