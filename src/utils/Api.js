@@ -7,7 +7,7 @@ class Api {
   }
   getAppInfo() {
     //call getUserInfo in this array
-    return Promise.all([this.getInitialCards()]);
+    return Promise.all([this.getInitialCards(), this.getUsersInfo()]);
   }
   getInitialCards() {
     return fetch(`${this._baseUrl}/cards`, {
@@ -20,9 +20,16 @@ class Api {
     });
   }
   //create another method, getUserInfo(different baseUrl, )
-
-  // other methods for working with the API
+  getUsersInfo() {
+    return fetch(`${this._baseUrl}/users`, {
+      headers: this._headers,
+    }).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      return Promise.reject(`Error: ${res.status}`);
+    });
+  }
 }
 
-// export the class
 export default Api;
