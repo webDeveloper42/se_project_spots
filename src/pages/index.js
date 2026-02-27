@@ -1,6 +1,7 @@
 import "./index.css";
 import likeIcon from "../images/like.svg";
 import likedIcon from "../images/liked.svg";
+import Api from "../utils/Api.js";
 import {
   enableValidation,
   settings,
@@ -64,6 +65,29 @@ const previewModalCloseBtn = document.querySelector(".modal__preview-exit");
 const newPostForm = postModal.querySelector(".modal__form");
 const cardSubmitBtn = postModal.querySelector(".form__save");
 const profileSubmitBtn = editModal.querySelector(".form__save");
+
+const api = new Api({
+  baseUrl: "https://around-api.en.tripleten-services.com/v1",
+  headers: {
+    authorization: "006a4c81-1607-41c2-8939-b62f86151b71",
+    "Content-Type": "application/json",
+  },
+});
+//destructure the second item in the .then callback
+api
+  .getAppInfo()
+  .then(([cards]) => {
+    cards.forEach((data) => {
+      const card = createCard(data);
+      cardGallery.appendChild(card);
+      console.log(cards);
+    });
+    //handle users response information
+    // - set the src of the avatar image
+    // - set the textContent of both the text element
+  })
+  .catch(console.error);
+
 // Utility modal functions
 function close(modal) {
   modal.classList.remove("modal__opened");
@@ -160,12 +184,6 @@ function createCard(data) {
   setupCardFeatures(card);
   return card;
 }
-
-// Render initial cards
-initialCards.forEach((data) => {
-  const card = createCard(data);
-  cardGallery.appendChild(card);
-});
 
 // Edit profile modal
 editProfileBtn.addEventListener("click", () => {
