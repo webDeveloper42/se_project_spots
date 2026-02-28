@@ -1,6 +1,7 @@
 import "./index.css";
 import likeIcon from "../images/like.svg";
 import likedIcon from "../images/liked.svg";
+import avatarImg from "../images/avatar.jpg";
 import Api from "../utils/Api.js";
 import {
   enableValidation,
@@ -66,6 +67,14 @@ const newPostForm = postModal.querySelector(".modal__form");
 const cardSubmitBtn = postModal.querySelector(".form__save");
 const profileSubmitBtn = editModal.querySelector(".form__save");
 
+const avatarModalBtn = document.querySelector(".profile__avatar-btn");
+const avatarModal = document.querySelector(".modal__edit-avatar");
+const avatarForm = avatarModal.querySelector(".modal__form");
+const avatarBtn = avatarModal.querySelector(".form__save");
+const avatarExitBtn = avatarModal.querySelector(".modal__exit");
+const avatarInput = avatarModal.querySelector("#profile-avatar-input");
+const avatarProfile = document.querySelector(".profile__image");
+
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
   headers: {
@@ -76,15 +85,19 @@ const api = new Api({
 //destructure the second item in the .then callback
 api
   .getAppInfo()
-  .then(([cards]) => {
+  .then(([cards, user]) => {
     cards.forEach((data) => {
       const card = createCard(data);
       cardGallery.appendChild(card);
       console.log(cards);
     });
     //handle users response information
+    console.log(user);
     // - set the src of the avatar image
+    user.avatar = avatarImg;
     // - set the textContent of both the text element
+    user.name = profileNameTitle.textContent.trim();
+    user.about = profileDescriptionTitle.textContent;
   })
   .catch(console.error);
 
@@ -198,14 +211,24 @@ editProfileBtn.addEventListener("click", () => {
 });
 editProfileForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  profileNameTitle.textContent = editNameInput.value;
-  profileDescriptionTitle.textContent = editDescriptionInput.value;
-  const inputList = Array.from(
-    editProfileForm.querySelectorAll(settings.inputSelector),
-  );
-  resetValidation(editProfileForm, inputList, settings);
-  disableButton(profileSubmitBtn, settings);
-  close(editModal);
+  api
+    .editUserInfo({
+      name: editNameInput.value,
+      about: editDescriptionInput.value,
+    })
+    .then((data) => {
+      // use data arg instead of input values
+      console.log(data);
+      profileNameTitle.textContent = data.name;
+      profileDescriptionTitle.textContent = data.about;
+      const inputList = Array.from(
+        editProfileForm.querySelectorAll(settings.inputSelector),
+      );
+      resetValidation(editProfileForm, inputList, settings);
+      disableButton(profileSubmitBtn, settings);
+      close(editModal);
+    })
+    .catch(console.error());
 });
 // New post modal
 addPhotoBtn.addEventListener("click", () => open(postModal));
@@ -225,3 +248,28 @@ newPostForm.addEventListener("submit", (e) => {
 
 previewModalCloseBtn.addEventListener("click", () => close(previewModal));
 enableValidation(settings);
+
+// Select avatar modal at the top of the page
+// Select avatar modal btn at the top of the page
+//TODO finish avatar submision handler
+function handleAvatarSubmit(evt) {
+  evt.preventDefault();
+  //TODO call api.editavataruserinfo()
+  api
+    .editAvatarInfo({ avatar: avatarInput.value })
+    .then((data) => {
+      console.log(data);
+      avatarProfile.src = data.avatar;
+      const inputList = Array.from(
+        avatarForm.querySelectorAll(settings.inputSelector),
+      );
+      resetValidation(avatarForm, inputList, settings);
+      disableButton(avatarBtn, settings);
+      close(avatarModal);
+    })
+    .catch(console.error);
+}
+avatarForm.addEventListener("submit", handleAvatarSubmit);
+const overlayAvatar = avatarModal.querySelector(".modal__overlay");
+overlayExit(overlayAvatar, avatarModal);
+avatarModalBtn.addEventListener("click", () => open(avatarModal));
