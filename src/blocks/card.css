@@ -30,6 +30,7 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
+  outline: none;
 }
 
 .card__like-img {
