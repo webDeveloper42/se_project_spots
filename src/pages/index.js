@@ -281,5 +281,7 @@ avatarModalBtn.addEventListener("click", () => open(avatarModal));
 
 cardTrashBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  modalCancel.classList.add("modal__opened");
+  open(modalCancel);
 });
+const overlayCancel = modalCancel.querySelector(".modal__overlay");
+overlayExit(overlayCancel, modalCancel);
