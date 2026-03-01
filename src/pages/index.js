@@ -279,6 +279,27 @@ const overlayAvatar = avatarModal.querySelector(".modal__overlay");
 overlayExit(overlayAvatar, avatarModal);
 avatarModalBtn.addEventListener("click", () => open(avatarModal));
 
+cardSubmitBtn.addEventListener("click", () => {
+  const imgLink = postImgLinkInput.value;
+  api
+    .postCard({
+      isLiked: card.isLiked,
+      _id: card._id,
+      name: postCaptionInput.value,
+      link: imgLink,
+      owner: card.owner,
+      createdAt: card.createdAt,
+    })
+    .then((data) => {
+      // use data arg instead of input values
+      console.log(data);
+      cardTitle.textContent = data.name;
+      cardImg.src = data.link;
+      console.log(data);
+    })
+    .catch(console.error());
+});
+
 cardTrashBtn.addEventListener("click", (e) => {
   e.preventDefault();
   open(modalCancel);
