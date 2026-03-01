@@ -160,7 +160,6 @@ function enableDelete(card) {
   const deleteBtn = card.querySelector(".button__delete");
   deleteBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    modalCancel.classList.add("modal__opened");
   });
 }
 
@@ -280,4 +279,7 @@ const overlayAvatar = avatarModal.querySelector(".modal__overlay");
 overlayExit(overlayAvatar, avatarModal);
 avatarModalBtn.addEventListener("click", () => open(avatarModal));
 
-cardTrashBtn.addEventListener("click", enableDelete(card));
+cardTrashBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  modalCancel.classList.add("modal__opened");
+});
