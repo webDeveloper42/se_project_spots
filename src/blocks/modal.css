@@ -204,4 +204,7 @@
     top: -50px;
     left: 300px;
   }
+  .modal__heading-cancel {
+    line-height: 120%;
+  }
 }
