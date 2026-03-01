@@ -285,3 +285,6 @@ cardTrashBtn.addEventListener("click", (e) => {
 });
 const overlayCancel = modalCancel.querySelector(".modal__overlay");
 overlayExit(overlayCancel, modalCancel);
+modalCancelDeleteBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+});
