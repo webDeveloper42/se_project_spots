@@ -137,11 +137,20 @@
   background-color: #ffffff;
   color: #212121;
   border: 1px solid #212121;
+  position: relative;
 }
 .form__cancel:hover {
   color: #ffffff;
   background-color: #212121;
   opacity: 1;
+}
+.modal__cancel-exit {
+  top: -11px;
+  left: 727px;
+  position: absolute;
+}
+.modal__cancel-container {
+  max-width: 630px;
 }
 
 @media screen and (max-width: 768px) {
@@ -181,5 +190,18 @@
     flex-direction: column;
     justify-content: center;
     gap: 12px;
+  }
+  .modal__cancel {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .modal__cancel-container {
+    position: relative;
+    width: 320px;
+  }
+  .modal__cancel-exit {
+    position: absolute;
+    top: -50px;
+    left: 300px;
   }
 }
