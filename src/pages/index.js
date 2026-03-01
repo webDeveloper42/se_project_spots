@@ -74,7 +74,17 @@ const avatarBtn = avatarModal.querySelector(".form__save");
 const avatarExitBtn = avatarModal.querySelector(".modal__exit");
 const avatarInput = avatarModal.querySelector("#profile-avatar-input");
 const avatarProfile = document.querySelector(".profile__image");
+const cardClone = cardTemplate.content.cloneNode(true);
+const card = cardClone.querySelector(".gallery__card");
+const cardImg = cardClone.querySelector(".card__img");
+const cardTitle = cardClone.querySelector(".card__title");
 
+// cancel modal
+const cardTrashBtn = cardClone.querySelector(".card__trash");
+const modalCancel = document.querySelector(".modal__cancel");
+const modalCancelForm = modalCancel.querySelector(".modal__cancel-form");
+const modalCancelDeleteBtn = modalCancelForm.querySelector(".form__delete");
+const modalCancelBtn = modalCancelForm.querySelector(".form__cancel");
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
   headers: {
@@ -150,7 +160,7 @@ function enableDelete(card) {
   const deleteBtn = card.querySelector(".button__delete");
   deleteBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    card.remove();
+    modalCancel.classList.add("modal__opened");
   });
 }
 
@@ -187,10 +197,6 @@ function makeCardData(name, link) {
 }
 
 function createCard(data) {
-  const cardClone = cardTemplate.content.cloneNode(true);
-  const card = cardClone.querySelector(".gallery__card");
-  const cardImg = cardClone.querySelector(".card__img");
-  const cardTitle = cardClone.querySelector(".card__title");
   cardImg.src = data.link;
   cardImg.alt = data.alt;
   cardTitle.textContent = data.name;
@@ -273,3 +279,5 @@ avatarForm.addEventListener("submit", handleAvatarSubmit);
 const overlayAvatar = avatarModal.querySelector(".modal__overlay");
 overlayExit(overlayAvatar, avatarModal);
 avatarModalBtn.addEventListener("click", () => open(avatarModal));
+
+cardTrashBtn.addEventListener("click", enableDelete(card));
