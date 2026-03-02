@@ -134,19 +134,33 @@ const overlayEdit = editModal.querySelector(".modal__overlay");
 overlayExit(overlayEdit, editModal);
 const overlayPreview = previewModal.querySelector(".modal__overlay");
 overlayExit(overlayPreview, previewModal);
+
 // Feature setup
 function toggleLike(card) {
   const likeBtn = card.querySelector(".card__like-btn");
   const likeImg = card.querySelector(".button__img-like");
   let isLiked = false;
+  const cardId = card.id;
+  console.log(cardId + "card id toggle");
+
   likeBtn.addEventListener("click", (e) => {
     e.preventDefault();
     if (isLiked) {
-      likeImg.src = likeIcon;
-      isLiked = false;
+      api
+        .changeLikeStatus({ _id: cardId, isLiked: isLiked })
+        .then(() => {
+          likeImg.src = likeIcon;
+          isLiked = false;
+        })
+        .catch(console.error);
     } else {
-      likeImg.src = likedIcon;
-      isLiked = true;
+      api
+        .changeLikeStatus({ _id: cardId, isLiked: isLiked })
+        .then(() => {
+          likeImg.src = likedIcon;
+          isLiked = true;
+        })
+        .catch(console.error);
     }
   });
 }
@@ -194,6 +208,8 @@ function createCard(data) {
   const cardImg = cardClone.querySelector(".card__img");
   const cardTitle = cardClone.querySelector(".card__title");
   const cardTrashBtn = cardClone.querySelector(".card__trash");
+  card.id = data._id;
+  console.log(card.id + "card id");
   cardTrashBtn.addEventListener("click", (e) =>
     handleTrashBtnActions(e, card, data._id),
   );
