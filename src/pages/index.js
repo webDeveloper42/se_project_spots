@@ -232,6 +232,7 @@ editProfileBtn.addEventListener("click", () => {
 });
 editProfileForm.addEventListener("submit", (e) => {
   e.preventDefault();
+  profileSubmitBtn.textContent = "Saving...";
   api
     .editUserInfo({
       name: editNameInput.value,
@@ -248,7 +249,10 @@ editProfileForm.addEventListener("submit", (e) => {
       disableButton(profileSubmitBtn, settings);
       close(editModal);
     })
-    .catch(console.error());
+    .catch(console.error())
+    .finally(() => {
+      profileSubmitBtn.textContent = "Save";
+    });
 });
 
 previewModalCloseBtn.addEventListener("click", () => close(previewModal));
@@ -306,6 +310,7 @@ const overlayCancel = modalCancel.querySelector(".modal__overlay");
 overlayExit(overlayCancel, modalCancel);
 modalCancelDeleteBtn.addEventListener("click", (e) => {
   e.preventDefault();
+  modalCancelDeleteBtn.textContent = "Deleting...";
   removeCard();
 });
 modalCancelBtn.addEventListener("click", resetSelectedCardsToDelete);
@@ -321,5 +326,8 @@ function removeCard() {
       selectCard.remove();
       close(modalCancel);
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+      modalCancelDeleteBtn.textContent = "delete";
+    });
 }
