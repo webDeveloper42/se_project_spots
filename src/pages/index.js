@@ -74,13 +74,9 @@ const avatarBtn = avatarModal.querySelector(".form__save");
 const avatarExitBtn = avatarModal.querySelector(".modal__exit");
 const avatarInput = avatarModal.querySelector("#profile-avatar-input");
 const avatarProfile = document.querySelector(".profile__image");
-const cardClone = cardTemplate.content.cloneNode(true);
-const card = cardClone.querySelector(".gallery__card");
-const cardImg = cardClone.querySelector(".card__img");
-const cardTitle = cardClone.querySelector(".card__title");
 
 // cancel modal
-const cardTrashBtn = cardClone.querySelector(".card__trash");
+
 const modalCancel = document.querySelector(".modal__cancel");
 const modalCancelForm = modalCancel.querySelector(".modal__cancel-form");
 const modalCancelDeleteBtn = modalCancelForm.querySelector(".form__delete");
@@ -187,18 +183,18 @@ function setupCardFeatures(card) {
   enablePreview(card);
 }
 
-function makeCardData(name, link) {
-  return {
-    name: name,
-    link: link,
-    alt: `${name}`,
-  };
-}
-
 function createCard(data) {
-  cardImg.src = data.link;
-  cardImg.alt = data.alt;
+  const cardClone = cardTemplate.content.cloneNode(true);
+  const card = cardClone.querySelector(".gallery__card");
+  const cardImg = cardClone.querySelector(".card__img");
+  const cardTitle = cardClone.querySelector(".card__title");
+  const cardTrashBtn = cardClone.querySelector(".card__trash");
+  cardTrashBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    open(modalCancel);
+  });
   cardTitle.textContent = data.name;
+  cardImg.src = data.link;
   setupCardFeatures(card);
   return card;
 }
@@ -235,21 +231,6 @@ editProfileForm.addEventListener("submit", (e) => {
     })
     .catch(console.error());
 });
-// New post modal
-addPhotoBtn.addEventListener("click", () => open(postModal));
-newPostForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const cardData = makeCardData(postCaptionInput.value, postImgLinkInput.value);
-  const card = createCard(cardData);
-  cardGallery.prepend(card);
-  newPostForm.reset();
-  const inputList = Array.from(
-    newPostForm.querySelectorAll(settings.inputSelector),
-  );
-  resetValidation(newPostForm, inputList, settings);
-  disableButton(cardSubmitBtn, settings);
-  close(postModal);
-});
 
 previewModalCloseBtn.addEventListener("click", () => close(previewModal));
 enableValidation(settings);
@@ -279,31 +260,35 @@ const overlayAvatar = avatarModal.querySelector(".modal__overlay");
 overlayExit(overlayAvatar, avatarModal);
 avatarModalBtn.addEventListener("click", () => open(avatarModal));
 
-cardSubmitBtn.addEventListener("click", () => {
-  const imgLink = postImgLinkInput.value;
+// New post modal
+addPhotoBtn.addEventListener("click", () => open(postModal));
+newPostForm.addEventListener("submit", (e) => {
+  e.preventDefault();
   api
     .postCard({
       isLiked: card.isLiked,
       _id: card._id,
       name: postCaptionInput.value,
-      link: imgLink,
+      link: postImgLinkInput.value,
       owner: card.owner,
       createdAt: card.createdAt,
     })
     .then((data) => {
       // use data arg instead of input values
       console.log(data);
-      cardTitle.textContent = data.name;
-      cardImg.src = data.link;
-      console.log(data);
+      const card = createCard(data);
+      cardGallery.prepend(card);
+      newPostForm.reset();
     })
     .catch(console.error());
+  const inputList = Array.from(
+    newPostForm.querySelectorAll(settings.inputSelector),
+  );
+  resetValidation(newPostForm, inputList, settings);
+  disableButton(cardSubmitBtn, settings);
+  close(postModal);
 });
 
-cardTrashBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  open(modalCancel);
-});
 const overlayCancel = modalCancel.querySelector(".modal__overlay");
 overlayExit(overlayCancel, modalCancel);
 modalCancelDeleteBtn.addEventListener("click", (e) => {
