@@ -71,7 +71,6 @@ const avatarModalBtn = document.querySelector(".profile__avatar-btn");
 const avatarModal = document.querySelector(".modal__edit-avatar");
 const avatarForm = avatarModal.querySelector(".modal__form");
 const avatarBtn = avatarModal.querySelector(".form__save");
-const avatarExitBtn = avatarModal.querySelector(".modal__exit");
 const avatarInput = avatarModal.querySelector("#profile-avatar-input");
 const avatarProfile = document.querySelector(".profile__image");
 let selectCard, selectedCardId;
@@ -260,6 +259,7 @@ enableValidation(settings);
 
 function handleAvatarSubmit(evt) {
   evt.preventDefault();
+  avatarBtn.textContent = "Saving...";
   api
     .editAvatarInfo({ avatar: avatarInput.value })
     .then((data) => {
@@ -271,7 +271,10 @@ function handleAvatarSubmit(evt) {
       disableButton(avatarBtn, settings);
       close(avatarModal);
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+      avatarBtn.textContent = "Save";
+    });
 }
 avatarForm.addEventListener("submit", handleAvatarSubmit);
 const overlayAvatar = avatarModal.querySelector(".modal__overlay");
