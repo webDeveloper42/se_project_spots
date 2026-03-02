@@ -30,18 +30,14 @@ class Api {
       return Promise.reject(`Error: ${res.status}`);
     });
   }
-  postCard({ isLiked, _id, name, link, owner, createdAt }) {
+  postCard({ name, link }) {
     return fetch(`${this._baseUrl}/cards`, {
       method: "POST",
       headers: this._headers,
       // Send the data in the body as a JSON string.
       body: JSON.stringify({
-        isLiked,
-        _id,
         name,
         link,
-        owner,
-        createdAt,
       }),
     }).then((res) => {
       if (res.ok) {

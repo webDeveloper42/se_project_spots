@@ -95,7 +95,6 @@ api
       const card = createCard(data);
       cardGallery.appendChild(card);
     });
-    console.log(cards);
     //handle users response information
     // - set the src of the avatar image
     user.avatar = avatarImg;
@@ -140,7 +139,6 @@ function toggleLike(card) {
   const likeImg = card.querySelector(".button__img-like");
   let isLiked = false;
   const cardId = card.id;
-  console.log(cardId + "card id toggle");
 
   likeBtn.addEventListener("click", (e) => {
     e.preventDefault();
@@ -208,7 +206,6 @@ function createCard(data) {
   const cardTitle = cardClone.querySelector(".card__title");
   const cardTrashBtn = cardClone.querySelector(".card__trash");
   card.id = data._id;
-  console.log(card.id + "card id");
   cardTrashBtn.addEventListener("click", (e) =>
     handleTrashBtnActions(e, card, data._id),
   );
@@ -327,6 +324,10 @@ function removeCard() {
     })
     .catch(console.error)
     .finally(() => {
-      modalCancelDeleteBtn.textContent = "delete";
+      modalCancelDeleteBtn.textContent = "Delete";
     });
 }
+
+// initialCards.forEach((data) => {
+//   api.postCard({ name: data.name, link: data.link });
+// });
