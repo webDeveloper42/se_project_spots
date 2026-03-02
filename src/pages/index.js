@@ -287,12 +287,8 @@ newPostForm.addEventListener("submit", (e) => {
   e.preventDefault();
   api
     .postCard({
-      isLiked: card.isLiked,
-      id: card._id,
       name: postCaptionInput.value,
       link: postImgLinkInput.value,
-      owner: card.owner,
-      createdAt: card.createdAt,
     })
     .then((data) => {
       // use data arg instead of input values
