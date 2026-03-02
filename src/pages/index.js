@@ -74,7 +74,7 @@ const avatarBtn = avatarModal.querySelector(".form__save");
 const avatarExitBtn = avatarModal.querySelector(".modal__exit");
 const avatarInput = avatarModal.querySelector("#profile-avatar-input");
 const avatarProfile = document.querySelector(".profile__image");
-
+let selectCard, selectedCardId;
 // cancel modal
 
 const modalCancel = document.querySelector(".modal__cancel");
@@ -95,10 +95,9 @@ api
     cards.forEach((data) => {
       const card = createCard(data);
       cardGallery.appendChild(card);
-      console.log(cards);
     });
+    console.log(cards);
     //handle users response information
-    console.log(user);
     // - set the src of the avatar image
     user.avatar = avatarImg;
     // - set the textContent of both the text element
@@ -183,16 +182,21 @@ function setupCardFeatures(card) {
   enablePreview(card);
 }
 
+function handleTrashBtnActions(e, card, cardId) {
+  e.preventDefault();
+  open(modalCancel);
+  selectCard = card;
+  selectedCardId = cardId;
+}
 function createCard(data) {
   const cardClone = cardTemplate.content.cloneNode(true);
   const card = cardClone.querySelector(".gallery__card");
   const cardImg = cardClone.querySelector(".card__img");
   const cardTitle = cardClone.querySelector(".card__title");
   const cardTrashBtn = cardClone.querySelector(".card__trash");
-  cardTrashBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    open(modalCancel);
-  });
+  cardTrashBtn.addEventListener("click", (e) =>
+    handleTrashBtnActions(e, card, data._id),
+  );
   cardTitle.textContent = data.name;
   cardImg.src = data.link;
   setupCardFeatures(card);
@@ -219,7 +223,6 @@ editProfileForm.addEventListener("submit", (e) => {
     })
     .then((data) => {
       // use data arg instead of input values
-      console.log(data);
       profileNameTitle.textContent = data.name;
       profileDescriptionTitle.textContent = data.about;
       const inputList = Array.from(
@@ -235,16 +238,11 @@ editProfileForm.addEventListener("submit", (e) => {
 previewModalCloseBtn.addEventListener("click", () => close(previewModal));
 enableValidation(settings);
 
-// Select avatar modal at the top of the page
-// Select avatar modal btn at the top of the page
-//TODO finish avatar submision handler
 function handleAvatarSubmit(evt) {
   evt.preventDefault();
-  //TODO call api.editavataruserinfo()
   api
     .editAvatarInfo({ avatar: avatarInput.value })
     .then((data) => {
-      console.log(data);
       avatarProfile.src = data.avatar;
       const inputList = Array.from(
         avatarForm.querySelectorAll(settings.inputSelector),
@@ -267,7 +265,7 @@ newPostForm.addEventListener("submit", (e) => {
   api
     .postCard({
       isLiked: card.isLiked,
-      _id: card._id,
+      id: card._id,
       name: postCaptionInput.value,
       link: postImgLinkInput.value,
       owner: card.owner,
@@ -275,7 +273,6 @@ newPostForm.addEventListener("submit", (e) => {
     })
     .then((data) => {
       // use data arg instead of input values
-      console.log(data);
       const card = createCard(data);
       cardGallery.prepend(card);
       newPostForm.reset();
@@ -293,4 +290,20 @@ const overlayCancel = modalCancel.querySelector(".modal__overlay");
 overlayExit(overlayCancel, modalCancel);
 modalCancelDeleteBtn.addEventListener("click", (e) => {
   e.preventDefault();
+  removeCard();
 });
+modalCancelBtn.addEventListener("click", resetSelectedCardsToDelete);
+function resetSelectedCardsToDelete() {
+  selectCard = " ";
+  selectedCardId = " ";
+  close(modalCancel);
+}
+function removeCard() {
+  api
+    .deleteCard({ _id: selectedCardId })
+    .then(() => {
+      selectCard.remove();
+      close(modalCancel);
+    })
+    .catch(console.error);
+}
