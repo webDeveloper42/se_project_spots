@@ -97,7 +97,7 @@ api
     });
     //handle users response information
     // - set the src of the avatar image
-    avatarBtn = user.avatar;
+    avatarImg = user.avatar;
     // - set the textContent of both the text element
     profileNameTitle.textContent = user.name;
     profileDescriptionTitle.textContent = user.about;
