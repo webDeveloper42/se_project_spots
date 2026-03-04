@@ -97,10 +97,10 @@ api
     });
     //handle users response information
     // - set the src of the avatar image
-    user.avatar = avatarImg;
+    avatarBtn = user.avatar;
     // - set the textContent of both the text element
-    user.name = profileNameTitle.textContent.trim();
-    user.about = profileDescriptionTitle.textContent;
+    profileNameTitle.textContent = user.name;
+    profileDescriptionTitle.textContent = user.about;
   })
   .catch(console.error);
 
