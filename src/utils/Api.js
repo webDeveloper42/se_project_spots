@@ -84,7 +84,7 @@ class Api {
       headers: this._headers,
     }).then((res) => {
       if (res.ok) {
-        return res.json();
+        return res;
       }
       return Promise.reject(`Error: ${res.status}`);
     });
