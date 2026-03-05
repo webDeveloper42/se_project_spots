@@ -134,11 +134,12 @@ const overlayPreview = previewModal.querySelector(".modal__overlay");
 overlayExit(overlayPreview, previewModal);
 
 // Feature setup
-function toggleLike(card) {
+function toggleLike(card, liked) {
   const likeBtn = card.querySelector(".card__like-btn");
   const likeImg = card.querySelector(".button__img-like");
-  let isLiked = false;
+  let isLiked = liked;
   const cardId = card.id;
+  likeImg.src = isLiked ? likedIcon : likeIcon;
 
   likeBtn.addEventListener("click", (e) => {
     e.preventDefault();
@@ -187,8 +188,8 @@ exitBtn.forEach((btn) => {
     close(modal);
   });
 });
-function setupCardFeatures(card) {
-  toggleLike(card);
+function setupCardFeatures(card, liked) {
+  toggleLike(card, liked);
   enableDelete(card);
   enablePreview(card);
 }
@@ -211,7 +212,7 @@ function createCard(data) {
   );
   cardTitle.textContent = data.name;
   cardImg.src = data.link;
-  setupCardFeatures(card);
+  setupCardFeatures(card, data.liked);
   return card;
 }
 
