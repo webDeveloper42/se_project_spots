@@ -1,7 +1,6 @@
 import "./index.css";
 import likeIcon from "../images/like.svg";
 import likedIcon from "../images/liked.svg";
-import avatarImg from "../images/avatar.jpg";
 import Api from "../utils/Api.js";
 import {
   enableValidation,
@@ -97,7 +96,7 @@ api
     });
     //handle users response information
     // - set the src of the avatar image
-    avatarImg = user.avatar;
+    avatarProfile.src = user.avatar;
     // - set the textContent of both the text element
     profileNameTitle.textContent = user.name;
     profileDescriptionTitle.textContent = user.about;
@@ -212,7 +211,7 @@ function createCard(data) {
   );
   cardTitle.textContent = data.name;
   cardImg.src = data.link;
-  setupCardFeatures(card, data.liked);
+  setupCardFeatures(card, data.isliked);
   return card;
 }
 
