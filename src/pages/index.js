@@ -245,7 +245,7 @@ editProfileForm.addEventListener("submit", (e) => {
       disableButton(profileSubmitBtn, settings);
       close(editModal);
     })
-    .catch(console.error())
+    .catch(console.error)
     .finally(() => {
       profileSubmitBtn.textContent = "Save";
     });
@@ -293,7 +293,7 @@ newPostForm.addEventListener("submit", (e) => {
       cardGallery.prepend(card);
       newPostForm.reset();
     })
-    .catch(console.error());
+    .catch(console.error);
   const inputList = Array.from(
     newPostForm.querySelectorAll(settings.inputSelector),
   );
