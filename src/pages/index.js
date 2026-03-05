@@ -211,6 +211,7 @@ function createCard(data) {
   );
   cardTitle.textContent = data.name;
   cardImg.src = data.link;
+  cardImg.alt = data.name;
   setupCardFeatures(card, data.isliked);
   return card;
 }
