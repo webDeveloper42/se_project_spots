@@ -138,27 +138,16 @@ function toggleLike(card, liked) {
   const likeImg = card.querySelector(".button__img-like");
   let isLiked = liked;
   const cardId = card.id;
-  likeImg.src = isLiked ? likedIcon : likeIcon;
 
   likeBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    if (isLiked) {
-      api
-        .changeLikeStatus({ _id: cardId, isLiked: isLiked })
-        .then(() => {
-          likeImg.src = likeIcon;
-          isLiked = false;
-        })
-        .catch(console.error);
-    } else {
-      api
-        .changeLikeStatus({ _id: cardId, isLiked: isLiked })
-        .then(() => {
-          likeImg.src = likedIcon;
-          isLiked = true;
-        })
-        .catch(console.error);
-    }
+    api
+      .changeLikeStatus({ _id: cardId, isLiked: isLiked })
+      .then((updateCard) => {
+        isLiked = updateCard.isLiked;
+        likeImg.src = isLiked ? likedIcon : likeIcon;
+      })
+      .catch(console.error);
   });
 }
 
@@ -212,7 +201,7 @@ function createCard(data) {
   cardTitle.textContent = data.name;
   cardImg.src = data.link;
   cardImg.alt = data.name;
-  setupCardFeatures(card, data.isliked);
+  setupCardFeatures(card, data.isLiked);
   return card;
 }
 
