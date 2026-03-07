@@ -241,7 +241,6 @@ editProfileForm.addEventListener("submit", (e) => {
   handleSubmit(makeRequest, e, "Saving...");
 });
 
-previewModalCloseBtn.addEventListener("click", () => close(previewModal));
 enableValidation(settings);
 
 function handleAvatarSubmit(evt) {
@@ -249,10 +248,6 @@ function handleAvatarSubmit(evt) {
   function makeRequest() {
     return api.editAvatarInfo({ avatar: avatarInput.value }).then((data) => {
       avatarProfile.src = data.avatar;
-      const inputList = Array.from(
-        avatarForm.querySelectorAll(settings.inputSelector),
-      );
-      resetValidation(avatarForm, inputList, settings);
       disableButton(avatarBtn, settings);
       close(avatarModal);
     });
