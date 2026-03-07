@@ -138,6 +138,7 @@ function toggleLike(card, liked) {
   const likeImg = card.querySelector(".button__img-like");
   let isLiked = liked;
   const cardId = card.id;
+  likeImg.src = isLiked ? likedIcon : likeIcon;
 
   likeBtn.addEventListener("click", (e) => {
     e.preventDefault();
