@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   z-index: 1;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 0;
@@ -151,6 +151,7 @@
 }
 .modal__cancel-container {
   max-width: 630px;
+  position: absolute;
 }
 
 @media screen and (max-width: 768px) {
@@ -196,8 +197,9 @@
     flex-direction: column-reverse;
   }
   .modal__cancel-container {
-    position: relative;
+    position: absolute;
     width: 320px;
+    margin: 0px 5px;
   }
   .modal__cancel-exit {
     position: absolute;
@@ -206,5 +208,22 @@
   }
   .modal__heading-cancel {
     line-height: 120%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .modal__cancel-container {
+    position: relative;
+    padding: 12px;
+    width: 100%;
+    max-width: 260px;
+    height: 200px;
+  }
+  .modal__cancel-exit {
+    left: 236px;
+  }
+  .form__delete,
+  .form__cancel {
+    width: 156px;
+    margin: 0px;
   }
 }
