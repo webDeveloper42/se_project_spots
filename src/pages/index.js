@@ -2,6 +2,7 @@ import "./index.css";
 import likeIcon from "../images/like.svg";
 import likedIcon from "../images/liked.svg";
 import Api from "../utils/Api.js";
+import { handleSubmit } from "../utils/utils.js";
 import {
   enableValidation,
   settings,
@@ -219,27 +220,25 @@ editProfileBtn.addEventListener("click", () => {
 });
 editProfileForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  profileSubmitBtn.textContent = "Saving...";
-  api
-    .editUserInfo({
-      name: editNameInput.value,
-      about: editDescriptionInput.value,
-    })
-    .then((data) => {
-      // use data arg instead of input values
-      profileNameTitle.textContent = data.name;
-      profileDescriptionTitle.textContent = data.about;
-      const inputList = Array.from(
-        editProfileForm.querySelectorAll(settings.inputSelector),
-      );
-      resetValidation(editProfileForm, inputList, settings);
-      disableButton(profileSubmitBtn, settings);
-      close(editModal);
-    })
-    .catch(console.error)
-    .finally(() => {
-      profileSubmitBtn.textContent = "Save";
-    });
+  function makeRequest() {
+    return api
+      .editUserInfo({
+        name: editNameInput.value,
+        about: editDescriptionInput.value,
+      })
+      .then((data) => {
+        // use data arg instead of input values
+        profileNameTitle.textContent = data.name;
+        profileDescriptionTitle.textContent = data.about;
+        const inputList = Array.from(
+          editProfileForm.querySelectorAll(settings.inputSelector),
+        );
+        resetValidation(editProfileForm, inputList, settings);
+        disableButton(profileSubmitBtn, settings);
+        close(editModal);
+      });
+  }
+  handleSubmit(makeRequest, e, "Saving...");
 });
 
 previewModalCloseBtn.addEventListener("click", () => close(previewModal));
@@ -247,10 +246,8 @@ enableValidation(settings);
 
 function handleAvatarSubmit(evt) {
   evt.preventDefault();
-  avatarBtn.textContent = "Saving...";
-  api
-    .editAvatarInfo({ avatar: avatarInput.value })
-    .then((data) => {
+  function makeRequest() {
+    return api.editAvatarInfo({ avatar: avatarInput.value }).then((data) => {
       avatarProfile.src = data.avatar;
       const inputList = Array.from(
         avatarForm.querySelectorAll(settings.inputSelector),
@@ -258,11 +255,9 @@ function handleAvatarSubmit(evt) {
       resetValidation(avatarForm, inputList, settings);
       disableButton(avatarBtn, settings);
       close(avatarModal);
-    })
-    .catch(console.error)
-    .finally(() => {
-      avatarBtn.textContent = "Save";
     });
+  }
+  handleSubmit(makeRequest, evt, "Saving...");
 }
 avatarForm.addEventListener("submit", handleAvatarSubmit);
 const overlayAvatar = avatarModal.querySelector(".modal__overlay");
@@ -273,24 +268,26 @@ avatarModalBtn.addEventListener("click", () => open(avatarModal));
 addPhotoBtn.addEventListener("click", () => open(postModal));
 newPostForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  api
-    .postCard({
-      name: postCaptionInput.value,
-      link: postImgLinkInput.value,
-    })
-    .then((data) => {
-      // use data arg instead of input values
-      const card = createCard(data);
-      cardGallery.prepend(card);
-      newPostForm.reset();
-    })
-    .catch(console.error);
-  const inputList = Array.from(
-    newPostForm.querySelectorAll(settings.inputSelector),
-  );
-  resetValidation(newPostForm, inputList, settings);
-  disableButton(cardSubmitBtn, settings);
-  close(postModal);
+  function makeRequest() {
+    return api
+      .postCard({
+        name: postCaptionInput.value,
+        link: postImgLinkInput.value,
+      })
+      .then((data) => {
+        // use data arg instead of input values
+        const card = createCard(data);
+        cardGallery.prepend(card);
+        newPostForm.reset();
+        const inputList = Array.from(
+          newPostForm.querySelectorAll(settings.inputSelector),
+        );
+        resetValidation(newPostForm, inputList, settings);
+        disableButton(cardSubmitBtn, settings);
+        close(postModal);
+      });
+  }
+  handleSubmit(makeRequest, e, "Saving...");
 });
 
 const overlayCancel = modalCancel.querySelector(".modal__overlay");
