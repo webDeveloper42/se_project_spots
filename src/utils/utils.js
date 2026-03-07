@@ -7,7 +7,7 @@ export function renderLoading(isLoading, button, buttonText, loadingText) {
 }
 
 export function handleSubmit(request, evt, loadingText) {
-  evt.preventDefault;
+  evt.preventDefault();
   const submitButton = evt.submitter;
   const initialText = submitButton.textContent;
   renderLoading(true, submitButton, initialText, loadingText);

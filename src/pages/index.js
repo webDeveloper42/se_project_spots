@@ -206,7 +206,6 @@ function createCard(data) {
   setupCardFeatures(card, data.isLiked);
   return card;
 }
-previewModalCloseBtn.addEventListener("click", () => close(previewModal));
 // Edit profile modal
 editProfileBtn.addEventListener("click", () => {
   open(editModal);
