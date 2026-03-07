@@ -206,7 +206,7 @@ function createCard(data) {
   setupCardFeatures(card, data.isLiked);
   return card;
 }
-
+previewModalCloseBtn.addEventListener("click", () => close(previewModal));
 // Edit profile modal
 editProfileBtn.addEventListener("click", () => {
   open(editModal);
@@ -219,7 +219,6 @@ editProfileBtn.addEventListener("click", () => {
   );
 });
 editProfileForm.addEventListener("submit", (e) => {
-  e.preventDefault();
   function makeRequest() {
     return api
       .editUserInfo({
@@ -244,7 +243,6 @@ editProfileForm.addEventListener("submit", (e) => {
 enableValidation(settings);
 
 function handleAvatarSubmit(evt) {
-  evt.preventDefault();
   function makeRequest() {
     return api.editAvatarInfo({ avatar: avatarInput.value }).then((data) => {
       avatarProfile.src = data.avatar;
@@ -262,7 +260,6 @@ avatarModalBtn.addEventListener("click", () => open(avatarModal));
 // New post modal
 addPhotoBtn.addEventListener("click", () => open(postModal));
 newPostForm.addEventListener("submit", (e) => {
-  e.preventDefault();
   function makeRequest() {
     return api
       .postCard({
