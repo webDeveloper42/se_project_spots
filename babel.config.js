@@ -13,7 +13,7 @@ const presets = [
       corejs: "^3",
     },
   ],
-  ["@babel/preset-env", "@babel/preset-react"],
+  ["@babel/preset-react"],
 ];
 
 module.exports = { presets };

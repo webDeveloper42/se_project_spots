@@ -9,6 +9,13 @@ import {
   resetValidation,
   disableButton,
 } from "../scripts/validation.js";
+import React from "react";
+import ReactDOM from "react-dom/client";
+const App = () => {
+  return <h1>React is Working!</h1>;
+};
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
 // Initial card data
 const initialCards = [
   {
