@@ -2,9 +2,9 @@
 
 ### Overview
 
-- Intro
-- Figma
-- Images
+- RESTful API
+- Vite
+- React
 
 **Intro**
 

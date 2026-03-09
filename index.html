@@ -7,11 +7,7 @@
   </head>
   <body class="page" id="root">
     <header class="header">
-      <img
-        class="header__logo"
-        src="<%=require('./images/Logo.svg')%>"
-        alt="spots logo"
-      />
+      <img class="header__logo" src="./src/images/Logo.svg" alt="spots logo" />
     </header>
     <div class="content">
       <main>
@@ -22,13 +18,13 @@
                 <button class="profile__avatar-btn">
                   <img
                     class="profile__pencil-icon"
-                    src="<%=require('./images/pencil-white.svg')%>"
+                    src="./src/images/pencil-white.svg"
                     alt="profile pencil icon"
                   />
                 </button>
                 <img
                   class="profile__image"
-                  src="<%=require('./images/avatar.jpg')%>"
+                  src="./src/images/avatar.jpg"
                   alt="avatar profile picture"
                 />
               </div>
@@ -42,7 +38,7 @@
                 <button type="button" class="button profile__edit">
                   <img
                     class="button__icon"
-                    src="<%=require('./images/edit-icon.svg')%>"
+                    src="./src/images/edit-icon.svg"
                     alt="edit button icon"
                   />
                   <span class="button__text"> Edit Profile </span>
@@ -52,7 +48,7 @@
             <button class="button profile__add">
               <img
                 class="button__icon"
-                src="<%=require('./images/plus-icon.svg')%>"
+                src="./src/images/plus-icon.svg"
                 alt="button icon"
               />
               <span class="button__text button__post">New Post</span>
@@ -72,7 +68,7 @@
                   <button class="button card__like default card__like-btn">
                     <img
                       class="button__img-like img-like"
-                      src="<%=require('./images/like.svg')%>"
+                      src="./src/images/like.svg"
                       alt="like button"
                     />
                   </button>
@@ -93,7 +89,7 @@
             <button class="button modal__exit modal__exit-edit">
               <img
                 class="modal__img"
-                src="<%=require('./images/exit-button_off.svg')%>"
+                src="./src/images/exit-button_off.svg"
                 alt="exit logo"
               />
             </button>
@@ -145,7 +141,7 @@
             <button class="button modal__exit modal__exit-post">
               <img
                 class="modal__img"
-                src="<%=require('./images/exit-button_off.svg')%>"
+                src="./src/images/exit-button_off.svg"
                 alt="exit logo"
               />
             </button>
@@ -196,12 +192,12 @@
             <button class="button modal__exit modal__preview-exit">
               <img
                 class="modal__img"
-                src="<%=require('./images/default-invert-x.svg')%>"
+                src="./src/images/default-invert-x.svg"
                 alt="exit logo"
               />
             </button>
             <img
-              src="<%=require('./images/2-photo-by-ceiline-from-pexels.jpg')%>"
+              src="./src/images/2-photo-by-ceiline-from-pexels.jpg"
               alt="card title"
               class="modal__preview-img"
             />
@@ -219,7 +215,7 @@
           <button class="button modal__exit modal__exit-edit">
             <img
               class="modal__img"
-              src="<%=require('./images/exit-button_off.svg')%>"
+              src="./src/images/exit-button_off.svg"
               alt="exit logo"
             />
           </button>
@@ -256,7 +252,7 @@
         <button class="button modal__exit modal__cancel-exit">
           <img
             class="modal__img"
-            src="<%=require('./images/default-invert-x.svg')%>"
+            src="./src/images/default-invert-x.svg"
             alt="exit logo"
           />
         </button>
@@ -281,5 +277,6 @@
         </form>
       </div>
     </div>
+    <script type="module" src="./src/pages/index.jsx"></script>
   </body>
 </html>
